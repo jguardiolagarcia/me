@@ -1,4 +1,4 @@
-# HOWTO MAKE A ZETTEL
+# HOW TO MAKE A ZETTEL
 ## second title
 unordered list:
 
