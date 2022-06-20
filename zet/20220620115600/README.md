@@ -1,5 +1,5 @@
 # HOW TO MAKE A ZETTEL
-## second title
+## second title (adding subheadings doens't go along with the idea of zettel, maybe reference to other zettel?)
 unordered list:
 
 * first bullet
