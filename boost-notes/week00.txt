@@ -1,0 +1,18 @@
+RWRXROB bootcamp
+
+quotes:
+
+- Don't getmat, get busy
+- Feare leads to hate, hates leads to suffering (YODA)
+- hacker mentality. A person that know how to learn. They learn their own way by testing and analyzing in an organized way. Hack the planet!
+
+To watch:
+- https://www.youtube.com/watch?v=nGanLUnjoPI&ab_channel=MSNBC (Karl sagan 2021 mess)
+- (Aaron Swartz documentary) The internet's Own Boy
+- https://twitch.tv/learnwithleon
+
+download:
+- virtual box
+-
+- topics
+TMUX window manager

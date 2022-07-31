@@ -1,0 +1,18 @@
+commands 
+* `ip a` - shows ip addressesssh
+* `users`shows name of lloged in users
+* `last`qqsad
+sa data of lasts log in thrugh ssh
+* `id` prints user ids
+* `w` shos people logged in
+* `less`
+* `ssh userName@VMip ´ for logging into an VM
+comments:
+* git bash was created to use git. But it is great because it let us use bash wihtout installing ws2.
+* we can search apt programs with `apt search programName`.
+* I can scroll the screen with the command `less`.. We can pipe like this `apt search blabla | less`
+* what about cms (DOS)
+* PUTTY. It allows connection through ssh directly, avoiding to do it through a shell
+* Windows terminal..
+	
+

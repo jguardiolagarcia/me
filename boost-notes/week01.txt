@@ -1,0 +1,35 @@
+WEEK 1
+
+To investigate/read:
+- Dig into ideas. Write about them. What about get a topic weekly and write something on sundays about it?.
+- zettelkasten. Niklas Luhmann / "Personal Knowledge Graph"
+- 8-bit cpu breadboard by ben eater in youtube
+
+Bootcamp
+
+- zettelkasten implementation: Just to put things on notes, throw them without much filtering. 
+MOST IMPORTANT: IT MUST BE SIMPLE AND USEFUL.
+Recomendations:
+	Title: less than 50 UNICODE char
+	Body 25-30- lines (rob fits his screen to meet this condition)
+	References including URL
+	Tags on last line
+	Stick with single level list
+convention:
+	Link to searches, not to content
+	
+- ISOSEC commits to github. Github allows a good search method.
+- Zet repos with license -> Can create it in creativecommons
+
+
+- Enterpirses use apache 2.0 because its more explicit about rights and permissions. You allow your stuff to be used at work-
+- commonmark.org : site for markdown
+
+Installing virtual Box
+
+
+
+
+
+
+

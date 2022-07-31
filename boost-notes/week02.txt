@@ -1,0 +1,53 @@
+#WEEK 2
+
+To investigate/read:
+- linuxCommand.org.
+- Get book the linux command line.
+- Linus torvalds. Linux kernel inventor
+- Richard Stallman. free software. GNU
+- https://medium.com/@rwxrob/problem-with-repl-it-415f885164f
+- “The UNIX Operating System” https://youtu.be/tc4ROCJYbm0
+- C is a language invented to operate with UNIX.
+- “Is it time to rewrite the OS in Rust” https://youtu.be/HgtRAbE1nBM (Brian Cantrill, Interesting stuff)
+- LINUX family tree
+
+Summary:
+- What is UNIX and LINUX?
+- What is a "shell" and why do i care?
+-Install, configure windows terminal.
+- Basic system update and package management.
+- Really simple and essential shell commands.
+-Setup Secure Shell (ssh): is a network communication protocol that enables two computers to communicate
+- GNU? this are the tools we use to operate linux. You can get it for free (Stallman is the creator)
+- What is a package? A bunch of software 
+- Permissions of files:
+    
+
+Usefull commands:
+mv : to move files or rename
+pwd: working direction
+ls: list files (-l to show extended info of files)
+cd: change direcotry^
+apt search ^neo: Searches all packages that start with the word neo
+neofetch: system info scrypt
+apt remove package (we should run after "sudo apt autoremove" to delete related packages)
+
+URL:
+githhub.com/microsoft/terminal/releases . no app store needed.
+replit.com. webapp to test bash scripts
+https://medium.com/@rwxrob/problem-with-repl-it-415f885164f
+https://learnxinyminutes.com/docs/go/ (To learn stuff)
+
+Challenge:
+
+
+Comments:
+TTYS can be traced on systems break in
+- Important people to know: Ken thomson, Brian Kernighan, 
+
+LOGIN INTO NEW LINUX SYSTEM:
+- 
+
+Log
+
+
