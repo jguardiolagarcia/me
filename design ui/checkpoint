@@ -1,0 +1,1564 @@
+// const replace = require("gulp-replace");
+
+define(function (require) {
+  let defaultJson = {
+    id: "container0",
+    type: "container",
+    visible: true,
+    layout: {
+      display: "block",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      flexShrink: 1,
+      gap: "10px",
+      columnPosition: "center",
+      alignItems: "center",
+      paddingTop: "20px",
+      paddingBottom: "20px",
+      paddingLeft: "20px",
+      paddingRight: "20px",
+    },
+    style: {
+      width: "100%",
+      minHeight: "505px",
+      backgroundColor: "#F5F5DC",
+      borderStyle: "dotted",
+      borderColor: "black",
+    },
+    widgets: [
+      {
+        id: "container1",
+        type: "container",
+        visible: true,
+        layout: {
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          flexShrink: 1,
+          gap: "10px",
+          columnPosition: "center",
+          alignItems: "center",
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginBottom: "20px",
+        },
+        style: {
+          width: "100%",
+          backgroundColor: "#F5F5DC",
+          borderStyle: "dotted",
+        },
+        widgets: [
+          {
+            id: "titulo",
+            type: "h1",
+            text: "{{title}}",
+            visible: true,
+            layout: {
+              display: "inline-block",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            },
+            style: {
+              height: "",
+              backgroundColor: "#F5F5DC",
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {},
+          },
+          {
+            id: "tabs",
+            type: "tabs",
+            properties: {
+              color: null,
+              alignment: "center",
+              active: "gaviola",
+              alignment: "center",
+              tabs: [
+                {
+                  id: "guardiola",
+                  text: "Guardiola",
+                  handlers: {
+                    activate: "alert('guardiola selected'); console.log('$data',$data); console.log('model',model);"
+                  },
+                  widgets: [
+                    {
+                      id: "text1",
+                      type: "h2",
+                      text: "{{model.title2}}",
+                      visible: true,
+                      layout: { marginLeft: "20px", marginRight: "20px" },
+                      style: {
+                        borderStyle: "solid",
+                        borderColor: "black",
+                      },
+                      font: {},
+                    },
+                    {
+                      id: "people",
+                      type: "repeatedContainer",
+                      data: "{{model.people}}",
+                      visible: true,
+                      layout: {
+                        display: "flex",
+                        flexDirection: "row",
+                        flexWrap: "wrap",
+                        justifyContent: "center",
+                        flexShrink: 1,
+                        gap: "10px",
+                        columnPosition: "center",
+                        alignItems: "center",
+                        paddingTop: "10px",
+                        paddingBottom: "10px",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                        marginTop: "10",
+                        marginBottom: "20px",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                      },
+                      style: {
+                        minWidth: "",
+                        maxWidth: "",
+                        width: "80%",
+                        height: "",
+                        backgroundColor: "#F5F5DC",
+                        borderStyle: "dotted",
+                      },
+                      properties: {
+                        repeatedContainer: {
+                          id: "group",
+                          type: "div",
+                          visible: true,
+                          layout: {
+                            display: "block",
+                            flexDirection: "row",
+                            flexWrap: "wrap",
+                            justifyContent: "center",
+                            flexShrink: 1,
+                            gap: "0",
+                            columnPosition: "center",
+                            alignItems: "center",
+                            paddingTop: "10px",
+                            paddingBottom: "10px",
+                            paddingLeft: "10px",
+                            paddingRight: "10px",
+                            marginTop: "5px",
+                            marginBottom: "5px",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                          },
+                          style: {
+                            minWidth: "",
+                            maxWidth: "",
+                            width: "80%",
+                            height: "",
+                            backgroundColor: "  #ADD8E6",
+                            borderStyle: "dotted",
+                          },
+                        },
+                      },
+                      widgets: [
+                        {
+                          id: "personRepeatedElement",
+                          type: "container",
+                          visible: true,
+                          layout: {
+                            display: "flex",
+                            flexDirection: "row",
+                            flexWrap: "wrap",
+                            justifyContent: "center",
+                            flexShrink: 1,
+                            gap: "10px",
+                            columnPosition: "center",
+                            alignItems: "center",
+                            paddingTop: "10px",
+                            paddingBottom: "10px",
+                            paddingLeft: "10px",
+                            paddingRight: "10px",
+                            marginBottom: "20px",
+                          },
+                          style: {
+                            width: "100%",
+                            backgroundColor: "#F5F5DC",
+                            borderStyle: "dotted",
+                          },
+                          widgets: [
+                            {
+                              id: "text1",
+                              type: "div",
+                              text: "{{firstName}}",
+                              visible: true,
+                              layout: {
+                                paddingLeft: "2px",
+                                paddingRight: "2px",
+                              },
+                              style: {
+                                width: "70px",
+                                height: "",
+                                backgroundColor: "#F5F5DC",
+                                borderStyle: "solid",
+                                borderColor: "black",
+                              },
+                              font: {},
+                            },
+                            {
+                              id: "text2",
+                              type: "div",
+                              text: "{{lastName}}",
+                              visible: true,
+                              layout: {
+                                paddingLeft: "2px",
+                                paddingRight: "2px",
+                              },
+                              style: {
+                                width: "70px",
+                                height: "",
+                                backgroundColor: "#F5F5DC",
+                                borderStyle: "solid",
+                                borderColor: "black",
+                              },
+                              font: {},
+                            },
+                            {
+                              id: "slingrButton1",
+                              type: "slingrWidget",
+                              visible: true,
+                              properties: {
+                                kind: "button",
+                                color: "info",
+                                click: "{{kill}}",
+                                id: "slingrButton",
+                                text: "Kill",
+                                icon: "zmdi-home",
+                                disabled: false,
+                              },
+                              layout: {},
+                              style: {},
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  id: "gaviola",
+                  text: "Gaviola",
+                  alignment: "center",
+                  handlers: {
+                    activate: "alert('gaviola selected'); console.log('$data',$data); console.log('model',model);"
+                  },
+                  widgets: [
+                    {
+                      id: "text1",
+                      type: "h2",
+                      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                      visible: true,
+                      layout: { marginLeft: "20px", marginRight: "20px" },
+                      style: {
+                        borderStyle: "solid",
+                        borderColor: "black",
+                      },
+                      font: {},
+                    },
+                   
+                  ],
+                },
+              ],
+            },
+            layout: {},
+            style: {
+              width: "100%",
+              borderStyle: "solid",
+              borderColor: "black",
+              backgroundColor: "#ffcccb",
+            },
+            font: {},
+          },
+        ],
+      },
+    ],
+  };
+
+  var modelDefinition = [
+    {
+      id: "people",
+      type: "array",
+      elementsType: "model",
+      nestedFields: [
+        {
+          id: "firstName",
+          type: "string",
+        },
+        {
+          id: "lastName",
+          type: "string",
+        },
+      ],
+    },
+    {
+      id: "tabsItems",
+      type: "array",
+      elementsType: "model",
+      nestedFields: [
+        {
+          id: "id",
+          type: "string",
+        },
+        {
+          id: "icon",
+          type: "string",
+        },
+        {
+          id: "text",
+          type: "string",
+        },
+        {
+          id: "content",
+          type: "string",
+        },
+      ],
+    },
+    {
+      id: "title",
+      type: "string",
+    },
+    {
+      id: "title2",
+      type: "string",
+    },
+    {
+      id: "kill",
+      type: "function",
+      handler: "model.people.splice($index, 1);",
+      // handler: "alert('hola');",
+    },
+  ];
+
+  modelObject = {
+    title: "Welcome to the app",
+    title2: "Miembros de la familia:",
+    people: [
+      {
+        firstName: "Juan",
+        lastName: "Guardiola",
+      },
+      {
+        firstName: "Tomas",
+        lastName: "Guardiola",
+      },
+    ],
+  };
+
+  // - code starts here
+  var viewModel = {},
+    ko = require("knockout"),
+    widgetUtils = require("common-ui/widgets/widgetUtils");
+  ko.options.useOnlyNativeEvents = true;
+
+  renderJSON = function () {
+    let outputContainer = $("#output");
+    let modelDefinition = JSON.parse(viewModel.textAreas.modelDefinition.value);
+    let modelObject = JSON.parse(viewModel.textAreas.modelObject.value);
+    buildRootModel(modelDefinition, modelObject);
+    let json = JSON.parse(viewModel.textAreas.jsonInput.value);
+    outputContainer.removeAttr("style");
+    outputContainer.empty();
+    let container = buildContainerElement(
+      "",
+      outputContainer,
+      json,
+      viewModel,
+      true
+    );
+
+    ko.applyBindings(rootModel, container);
+
+    outputContainer.append(container);
+  };
+
+  viewModel.activate = function () {
+    let self = this;
+    this.textAreas = {
+      jsonInput: {
+        id: "jsonInput",
+        value: JSON.stringify(defaultJson, undefined, 4),
+        cols: 30,
+        rows: 20,
+      },
+      modelDefinition: {
+        id: "modelDefinition",
+        value: JSON.stringify(modelDefinition, undefined, 4),
+        cols: 25,
+        rows: 20,
+      },
+      modelObject: {
+        id: "modelObject",
+        value: JSON.stringify(modelObject, undefined, 4),
+        cols: 25,
+        rows: 20,
+      },
+      // none: {
+      //   id: "test1",
+      //   value: '',
+      //   cols: 0,
+      //   rows: 0,
+      // },
+    };
+    this.activeInput = ko.observable(this.textAreas.none);
+    this.tabsSettings = {
+      $color: null,
+      $alignment: "left",
+      $active: "none",
+      $items: [
+        { id: "jsonInput", icon: "zmdi-home", text: "JSON INPUT", content: "" },
+        {
+          id: "modelObject",
+          icon: "",
+          text: "Model Object",
+          content: "",
+        },
+        {
+          id: "modelDefinition",
+          icon: "",
+          text: "Model Definition",
+          content: "",
+        },
+        {
+          id: "none",
+          icon: "",
+          text: "None",
+          content: "",
+        },
+      ],
+      tabSelectedCallback: function (tab) {
+        if (tab && tab.id) {
+          switch (tab.id) {
+            case "jsonInput":
+              console.log("jsonInput");
+              self.activeInput(self.textAreas.jsonInput);
+              break;
+            case "modelObject":
+              console.log("modelObject");
+              self.activeInput(self.textAreas.modelObject);
+              break;
+            case "modelDefinition":
+              console.log("modelDefinition");
+              self.activeInput(self.textAreas.modelDefinition);
+              break;
+            case "none":
+              console.log("modelDefinition");
+              self.activeInput("");
+              break;
+          }
+        }
+      },
+    };
+  };
+  return viewModel;
+});
+
+var rootModel = {};
+var modelDefinition = {};
+
+function removeAttributes(element) {
+  for (let i = 0; i < element.attributes.length; i++) {
+    element.removeAttribute(element.attributes[i].name);
+  }
+}
+
+function removeChildElements(element) {
+  while (element.hasChildNodes()) {
+    element.removeChild(element.groupfirstChild);
+  }
+}
+
+function renderButton(kind, color, click, id, text, icon, disabled) {
+  return {
+    kind: kind,
+    color: color,
+    click: click, //wrap for avoid context problems.
+    id: id,
+    text: text,
+    icon: icon,
+    disabled: disabled,
+  };
+}
+
+class Model {
+  constructor(modelObject) {
+    let observables = {};
+    for (let key in modelObject) {
+      if (key != "__originalTarget") {
+        if (isObject(modelObject[key]) && isArray(modelObject[key])) {
+          observables[key] = ko.observableArray(modelObject[key]);
+        } else {
+          observables[key] = createObservable(modelObject[key]);
+        }
+      } else {
+        observables[key] = modelObject[key];
+      }
+    }
+    console.log("observables: ", observables);
+    Object.assign(this, observables);
+  }
+
+  getValue(param) {
+    return this[param]();
+  }
+  setValue(param, value) {
+    return this[param](value);
+  }
+}
+
+function buildRootModel(modelDefinition, modelObject) {
+  this.modelDefinition = modelDefinition;
+  rootModel = buildModel(modelDefinition, modelObject);
+  // rootModel = deepProxy(buildModel(modelDefinition, modelObject));
+  console.log("rootModel: ", rootModel);
+}
+
+function buildModel(modelDefinition, modelObject) {
+  let model = {};
+  for (key in modelObject) {
+    let definition = findDefinitionKey(modelDefinition, key);
+    if (definition) {
+      validateKey(definition, key, modelObject[key], model);
+    } else {
+      alert("Var: " + key + " has not been defined");
+      throw "Var: " + key + " has not been defined";
+    }
+  }
+  for (definition in modelDefinition) {
+    if (modelDefinition[definition].type == "function") {
+      let handler = modelDefinition[definition].handler;
+      model[modelDefinition[definition].id] = buildFunctionWithHelpers(handler);
+    }
+  }
+  return model;
+}
+
+function buildFunctionWithHelpers(handler) {
+  let parameters = ["$root", "model", "$item", "$index", "$parent", "$parents"];
+  return function () {
+    let newFunction = new Function(parameters, handler);
+    let $data = arguments[0];
+    let $root = rootModel;
+    let $item =
+      $data.settings && $data.settings.bindingContext
+        ? $data.settings.bindingContext.$data
+        : $data;
+    let $parents =
+      $data.settings && $data.settings.bindingContext
+        ? $data.settings.bindingContext.$parents
+        : null;
+    let $index =
+      $data.settings &&
+      $data.settings.bindingContext &&
+      $data.settings.bindingContext.$index
+        ? $data.settings.bindingContext.$index()
+        : null;
+    console.log("-------------------------------------");
+    console.log("args", arguments);
+    console.log("root", $root);
+    console.log("$data", $data);
+    console.log("item", $item);
+    console.log("are equal", $item === $root);
+    console.log("index", $index);
+    console.log("parents", $parents);
+    let model = deepProxy(rootModel);
+    if ($item) {
+      if ($item === $root) {
+        console.log("creating $item proxy", model);
+        $item = model;
+      } else {
+        $item = deepProxy($item);
+      }
+      // $item = deepProxy($item);
+    }
+    let parentsProxies = [];
+    let parent = null;
+    console.log('parents',$parents);
+    if ($parents) {
+      $parents.forEach((context) => {
+        console.log("creating $parents proxy", context);
+        // we skip generating proxy for tabs context
+        if (context.constructor.name !== "Tabs") {
+          if (context === $root) {
+            parentsProxies.push(model);
+          } else {
+            parentsProxies.push(deepProxy(context));
+          }
+        }
+      });
+      $root = parentsProxies[0];
+      parent= parentsProxies[parentsProxies.length - 1];
+    }
+console.log('parent proxies', parentsProxies)
+    // console.log("PARENT PROXIES: ", parentsProxies);
+    // if ($parents) $parents = deepProxy($parents);
+    return newFunction($root, model, $item, $index, parent, parentsProxies);
+  };
+}
+
+function isObject(obj) {
+  return typeof obj === "object";
+}
+const arrayChangeMethod = [
+  "push",
+  "pop",
+  "unshift",
+  "shift",
+  "splice",
+  "sort",
+  "reverse",
+];
+function isObject(obj) {
+  return typeof obj === "object";
+}
+function isArray(arr) {
+  return Array.isArray(arr);
+}
+
+let myProxySet = new WeakSet();
+
+function deepProxy(model, target2) {
+  console.log("DEEP PROXY model ", model);
+  console.log("DEEP PROXY target2", target2);
+  const mapStore = {};
+  let arrayChanging = false;
+  if (model && !myProxySet.has(model)) {
+    // //we store the original model so we have access later to the original Model
+    // model.__originalTarget = model;
+    let proxy = new Proxy(model, {
+      get(target, property, receiver) {
+        if (
+          typeof property == "symbol" ||
+          property == "_destroy" ||
+          property == "__ko_proto"
+        )
+          return target[property];
+        console.log("GET -----------------------------------");
+        console.log("GET target", target);
+        console.log("GET property", property);
+        console.log("GET typeof property ", typeof property);
+        console.log("GET receiver", receiver);
+        console.log("GET target[property]", target[property]);
+        console.log("GET target2", target2);
+        let value = target[property];
+        if (typeof target === "function" && target.name == "observable") {
+          value = target()[property];
+          console.log("GET RETURNING target()[property]: ", value);
+        } else if (
+          typeof target[property] === "function" &&
+          target[property].name == "observable"
+        ) {
+          value = target[property]();
+          console.log("GET RETURNING target[property](): ", value);
+        } else {
+          console.log("GET RETURNING target[property]: ", value);
+          // value = target[property];
+        }
+        if (isArray(target) && arrayChangeMethod.indexOf(property) > -1) {
+          console;
+          // we override the array's method
+          return (...args) => {
+            arrayChanging = true;
+            console.log("ARRAY METHOD args", ...args);
+            console.log("ARRAY METHOD Array property", property);
+            console.log("ARRAY METHOD Array receiver", receiver);
+            console.log("ARRAY METHOD Array value", value);
+            console.log("ARRAY METHOD Array target", target);
+            console.log("ARRAY METHOD Array target2", target2);
+            console.log("ARRAY METHOD Array target2", target2());
+            value.bind(receiver)(...args);
+            arrayChanging = false;
+          };
+        }
+        console.log("GET value", value);
+
+        if (mapStore[property] === true) return value;
+        if (isObject(value) || isArray(value)) {
+          // console.log("Recursive method: target ", target);
+          // console.log("Recursive method: value ", value);
+          // console.log("Recursive method: property ", property);
+          // console.log("Recursive method: typeof property ", typeof property);
+          // console.log("Recursive method: target[property] ", target[property]);
+          // console.log(
+          //   "Recursive method: mapStore[property] ",
+          //   mapStore[property]
+          // );
+          // console.log("value: ", value);
+          const proxyValue =
+          mapStore[property] || deepProxy(value, target[property]);
+          mapStore[property] = proxyValue;
+          return proxyValue;
+        }
+        mapStore[property] = true;
+
+        // console.log("GET value", value);
+        // console.log("GET target", target);
+        // console.log("GET property", property);
+        // console.log("GET receiver", receiver);
+        // console.log("GET target[property]", target[property]);
+        return value;
+      },
+      set(target, property, value) {
+        console.log("SET ------------------------------------------");
+        console.log("SET value: ", value);
+        console.log('SET asdasd', value.target); // {name: 'Proxy', test: true}
+        console.log("SET target", target);
+        console.log("SET property", property);
+        console.log("SET target[property]", target[property]);
+        console.log("SET target2", target2);
+        console.log("SET array changing", arrayChanging);
+        let newVal = buildValueBeforeSet(value);
+        console.log("SET newVal", newVal);
+        if (arrayChanging) console.log("array changing");
+        if (typeof target2 === "function" && target2.name == "observable") {
+          console.log("SET target2 is observable..", newVal);
+          target[property] = newVal;
+          if (property == "length") target2(target);
+        } else if (
+          typeof target[property] === "function" &&
+          target[property].name == "observable"
+        ) {
+          console.log("SET target[property](newVal)", newVal);
+          target[property](newVal);
+        } else {
+          console.log("SET target[property] = ", newVal);
+          target[property] = newVal;
+        }
+        mapStore[property] = true;
+        return true;
+      },
+      deleteProperty(target, property) {
+        console.log("DELETE target", target);
+        console.log("DELETE property", property);
+        console.log("DELETE target[property]", target[property]);
+        console.log("DELETE arguments", arguments);
+        console.log("DELETE target2", target2);
+        console.log("DELETE arrayChanging", arrayChanging);
+        delete target[property];
+        delete mapStore[property];
+        // delete target[property];
+        if (typeof target2 === "function" && target2.name == "observable") {
+          console.log("DELETE update observable", target2);
+          // target2.remove(target[property]);
+        }
+        if (!arrayChanging) console.log("array changing");
+
+        return true;
+      },
+    });
+    myProxySet.add(proxy);
+    console.log("MY PROXY ADDING", proxy);
+    console.log("MY PROXY SET", myProxySet);
+    //we store the original model so we have access later to the original Model
+    proxy.__originalTarget = model;
+    // model.__originalTarget = model;
+    // delete model.__originalTarget
+    return proxy;
+  } else {
+    console.log("Proxy exists", model);
+    return model;
+  }
+}
+
+function buildValueBeforeSet(value) {
+  let newVal;
+  if (value.constructor.name == "Tabs") return value
+  if (isObject(value)) {
+    if (isArray(value)) {
+      //we desestructure proxy objects so we set normal objects in de view model
+      value = [...value];
+      value.forEach((element,index) => {
+        value[index] = buildValueBeforeSet(element);
+      })
+      console.log("SET is array, returning value", value);
+      // newVal = deepProxy(value, target2);
+      delete value.__originalTarget;
+
+      newVal = value;
+    } else {
+      console.log(
+        "SET value.constructor.name",
+       value.constructor.name
+      );
+      if (value.constructor.name == "Model") {
+        //  if(value.__originalTarget) value = value.__originalTarget;
+        console.log("SET yyy value1 ", value);
+
+        // value = {...value};
+        console.log("SET yyy value2 ", value);
+        console.log("SET yyy value.__originalTarget ", value.__originalTarget);
+        newVal = value.__originalTarget ? value.__originalTarget : value;
+        console.log("SET yyy new val", newVal);
+        delete newVal.__originalTarget;
+        console.log("SET is a model, not creating model", newVal);
+        // newVal = value;
+      } else {
+        console.log("SET is not a model, creating model", value);
+        delete value.__originalTarget;
+        newVal = new Model(value);
+        // newVal = value;
+      }
+      Object.keys(newVal).forEach(key => {
+        newVal[key] = buildValueBeforeSet(newVal[key]);
+      })
+    }
+  } else {
+    newVal = value;
+  }
+      // newVal = value;
+  console.log('yyy SET...newValue',newVal);
+  return newVal;
+}
+function findDefinitionKey(modelDefinition, key) {
+  let definition;
+  modelDefinition.map((object) => {
+    if (object.id === key) {
+      definition = object;
+    }
+  });
+  return definition;
+}
+
+function validateKey(definition, key, value, model) {
+  let valid = false;
+  switch (definition.type) {
+    case "string":
+    case "number":
+      if (typeof value == definition.type) {
+        if (model) model[key] = createObservable(value);
+        valid = true;
+      }
+      break;
+    case "boolean":
+      if (typeof value == "boolean") {
+        if (model) model[key] = createObservable(value);
+        valid = true;
+      }
+      break;
+    case "array":
+      let array = [];
+      model[key] = ko.observableArray();
+      if (definition.elementsType !== "record") {
+        array = validateArray(value, definition);
+        if (model) {
+          // model[key] = ko.observableArray(deepProxy(array));
+          // ***
+          // model[key](deepProxy(array, model[key]));
+          model[key](array);
+          console.log("modelkey: ", model[key]());
+        }
+      } else {
+        console.log("fetching: ");
+        slingr.ws.get(
+          {
+            url: "/data/" + definition.query.entity,
+            params: { _size: definition.query.size },
+          },
+          function (res) {
+            console.log("fetching: ", res);
+            res.items.forEach((item) => {
+              array.push(new Model(item));
+            });
+            model[key](array);
+                      // ***
+            // model[key](deepProxy(array, model[key]));
+          }
+        );
+      }
+      valid = true;
+      break;
+    case "JSON":
+      console.log("JSON value", value);
+      if (model) model[key] = createObservable(value);
+      valid = true;
+      break;
+    case "model":
+      if (model) {
+        if (value) {
+          model = validateModel(value, definition.nestedFields);
+          console.log("VALUE", value);
+        } else {
+          if (model) {
+            model[key] = ko.observable();
+          }
+        }
+      }
+      if (model) {
+        if (value) {
+          // model[key] = ko.observable(deepProxy(new Model(value)));
+          // model[key] = ko.observable(new Model(value));
+        } else {
+          console.log("empty observable: ", definition);
+          // model[key] = ko.observable();
+        }
+      }
+      valid = true;
+      break;
+    case "record":
+      valid = true;
+      break;
+  }
+  if (!valid) {
+    noValidTypeError(key, typeof value, definition);
+  }
+  return valid;
+}
+function createObservable(value) {
+  if (typeof value == "function" && value.name == "observable") {
+    return value;
+  } else {
+    return ko.observable(value);
+  }
+}
+
+function validateArray(array, arrayDefinition) {
+  let data = [];
+  for (element in array) {
+    if (
+      arrayDefinition.elementsType == "model" ||
+      arrayDefinition.elementsType == "JSON"
+    ) {
+      let model = {};
+      for (key in array[element]) {
+        let definition = findDefinitionKey(arrayDefinition.nestedFields, key);
+        if (definition) {
+          validateKey(definition, key, array[element][key], model);
+        } else {
+          alert("Var: " + key + " has not been defined");
+          throw "Var: " + key + " has not been defined";
+        }
+      }
+      // ***
+      // data.push(deepProxy(model));
+      console.log("modelToPush", model);
+      // data.push(deepProxy(new Model(model)));
+      data.push(new Model(model));
+    } else {
+      validateKey(
+        { id: "arrayElement", type: arrayDefinition.elementsType },
+        arrayDefinition.id,
+        array[element]
+      );
+      data.push(element);
+    }
+  }
+  return data;
+}
+
+function validateModel(modelObject, nestedFields) {
+  let model = {};
+  for (key in modelObject) {
+    let definition = findDefinitionKey(nestedFields, key);
+    if (definition) {
+      console.log("modelObject[key]", modelObject[key]);
+      validateKey(definition, key, modelObject[key]);
+      model[key] = modelObject[key];
+    } else {
+      alert("key: " + key + "is not defined");
+      throw "key: " + key + "is not defined";
+    }
+  }
+  console.log("modellll", model);
+
+  return model;
+}
+
+function noValidTypeError(key, currentType, definition) {
+  alert(
+    "wrong type of key:  " +
+      key +
+      ". It is a: " +
+      currentType +
+      " and should be a: " +
+      definition.type
+  );
+  throw (
+    "wrong type of key:  " +
+    key +
+    ". It is a: " +
+    currentType +
+    " and should be a: " +
+    definition.type
+  );
+}
+
+function buildContainerElement(parentObject, parentElement, elementObject) {
+  let container = document.createElement("div");
+  if (elementObject.type == "formGroup") container.classList.add("form-group");
+  removeAttributes(container);
+  removeChildElements(container);
+  container = setWidgetCss(
+    parentObject,
+    parentElement,
+    elementObject,
+    container
+  );
+  buildChildWidgets(elementObject, container);
+  checkIfBindings(elementObject, container);
+  return container;
+}
+
+function buildTabsElement(parentObject, parentElement, elementObject) {
+  let container = document.createElement("div");
+  container = setWidgetCss(
+    parentObject,
+    parentElement,
+    elementObject,
+    container
+  );
+  console.log(
+    "buildTabsElement element object: ",
+    elementObject.properties.tabs
+  );
+  let tabContainer = document.createElement("div");
+  tabContainer.setAttribute("data-part", "content");
+  container.append(tabContainer);
+  elementObject.properties.tabs.forEach((tab) => {
+    let ifContainer = document.createElement("div");
+    ifContainer.setAttribute("data-bind", "if: id == '" + tab.id + "'");
+    buildChildWidgets(tab, ifContainer);
+    tabContainer.append(ifContainer);
+  });
+  checkIfBindings(elementObject, container);
+  return container;
+}
+
+function buildChildWidgets(elementObject, container) {
+  elementObject.widgets.forEach(function (childElement) {
+    let widget;
+    switch (childElement.type) {
+      case "formGroup":
+      case "container":
+        widget = buildContainerElement(
+          elementObject,
+          container,
+          childElement,
+          true
+        );
+        break;
+      case "tabs":
+        widget = buildTabsElement(elementObject, container, childElement);
+        break;
+      case "repeatedContainer":
+        widget = buildRepeatedContainerElement(
+          elementObject,
+          container,
+          childElement,
+          false
+        );
+        break;
+      case "table":
+        widget = buildTableElement(elementObject, container, childElement);
+        break;
+      case "slingrWidget":
+      default:
+        widget = buildWidgetElement(elementObject, container, childElement);
+        checkIfBindings(childElement, widget);
+    }
+    if (childElement.if) {
+      widget = wrapIfWithContainer("if", childElement, widget);
+    }
+    if (childElement.with) {
+      widget = wrapIfWithContainer("with", childElement, widget);
+      console.log("WITH", widget);
+    }
+    container.appendChild(widget);
+  });
+}
+
+function wrapIfWithContainer(key, childElement, widget) {
+  let ifContainer;
+  ifContainer = document.createElement("div");
+  let value = checkBinding({}, key, childElement[key]);
+  let observable = buildKnockoutHTMLBinding(value);
+  ifContainer.setAttribute("data-bind", key + ":" + observable);
+  ifContainer.append(widget);
+  return ifContainer;
+}
+
+function buildRepeatedContainerElement(
+  parentObject,
+  parentElement,
+  elementObject
+) {
+  let container = document.createElement("div");
+  container = setWidgetCss(
+    parentObject,
+    parentElement,
+    elementObject,
+    container
+  );
+  let repeatedContainer = document.createElement(elementObject.properties.repeatedContainer.type);
+  repeatedContainer = setWidgetCss(elementObject, container, elementObject.properties.repeatedContainer, repeatedContainer);
+  buildChildWidgets(elementObject, repeatedContainer, null);
+  checkIfBindings(elementObject.properties.repeatedContainer, repeatedContainer);
+  container.append(repeatedContainer);
+  checkIfBindings(elementObject, container, true);
+  return container;
+}
+
+function buildTableElement(parentObject, parentElement, elementObject) {
+  let table = document.createElement("table");
+  table.classList.add("table");
+  table = setWidgetCss(parentObject, parentElement, elementObject, table);
+  elementObject.properties.tableTypes.forEach((element) => {
+    table.classList.add(element);
+  });
+  let thead = document.createElement("thead");
+  let theadRow = document.createElement("tr");
+  let tbody = document.createElement("tbody");
+  let tbodyRow = document.createElement("tr");
+  for (column in elementObject.properties.columns) {
+    //build header
+    buildTablePart(elementObject.properties.columns[column].header, theadRow, "header");
+    //build tbody
+    buildTablePart(elementObject.properties.columns[column].cell, tbodyRow, "tbody");
+  }
+  thead.append(theadRow);
+  table.append(thead);
+  tbody.append(tbodyRow);
+  let data;
+  if (isBinding(elementObject.data)) {
+    data = buildKnockoutHTMLBinding(elementObject.data);
+  }
+  tbody.setAttribute("data-bind", "foreach:" + data);
+  table.append(tbody);
+  return table;
+}
+
+function buildTablePart(element, tr, tablePart) {
+  let telement;
+  if (tablePart == "header") {
+    telement = document.createElement("th");
+    telement.setAttribute("scope", "col");
+  } else if (tablePart == "tbody") {
+    telement = document.createElement(element.type);
+    if (element.type == "th") telement.setAttribute("scope", "row");
+  }
+  buildChildWidgets(element, telement, false, null);
+  setWidgetCss("", "", element, telement);
+  checkIfBindings(element, telement);
+  tr.append(telement);
+}
+
+function buildWidgetElement(parentObject, parentElement, elementObject) {
+  let elementType =
+    elementObject.type == "slingrWidget" ? "div" : elementObject.type;
+  let widget = document.createElement(elementType);
+  widget.setAttribute("id", elementObject.id);
+  switch (elementObject.type) {
+    case "button":
+      widget.classList.add("btn");
+      widget.classList.add(elementObject.properties.class);
+      break;
+    case "input":
+      widget.classList.add("form-control");
+      widget = setInputProp(elementObject, widget);
+      break;
+  }
+  widget = setWidgetCss(parentObject, parentElement, elementObject, widget);
+  widget = setTextProp(elementObject, widget);
+  return widget;
+}
+
+function setInputProp(elementObject, widget) {
+  widget.setAttribute("type", elementObject.properties.type);
+  if (elementObject.properties.placeholder) {
+    widget.setAttribute("placeholder", elementObject.properties.placeholder);
+  }
+  if (elementObject.properties.value) {
+    widget.value = elementObject.properties.value;
+  }
+  return widget;
+}
+
+function setTextProp(elementObject, widget) {
+  if (elementObject.font) {
+    Object.assign(widget.style, {
+      "text-align": elementObject.layout.textAlign,
+      "text-decoration-line": elementObject.layout.textDecorationLine,
+      "text-transform": elementObject.layout.textTransform,
+      "letter-spacing": elementObject.layout.letterSpacing,
+      "line-height": elementObject.layout.lineHeight,
+      color: elementObject.font.color,
+      "font-family": elementObject.font.fontFamily
+        ? elementObject.font.fontFamily
+        : null,
+      "font-style": elementObject.font.fontStyle,
+      "font-size": elementObject.font.fontSize,
+      "font-weight": elementObject.font.fontWeight,
+    });
+  }
+  if (
+    elementObject.text &&
+    !isBinding(elementObject.text) &&
+    elementObject.text.indexOf("$") == -1
+  ) {
+    widget.innerHTML = elementObject.text;
+  }
+  return widget;
+}
+
+function setWidgetCss(parentObject, parentElement, elementObject, widget) {
+  Object.assign(widget.style, {
+    width: elementObject.style.width,
+    "min-width": elementObject.style.minWidth,
+    "max-width": elementObject.style.maxWidth,
+    "min-height": elementObject.style.minHeight,
+    "max-height": elementObject.style.maxHeight,
+    height: elementObject.style.height,
+    display: elementObject.layout.display,
+    verticalAlign: elementObject.layout.verticalAlign,
+    "flex-direction": elementObject.layout.flexDirection,
+    "justify-content": elementObject.layout.justifyContent,
+    "flex-shrink": elementObject.layout.flexShrink,
+    gap: elementObject.layout.gap,
+    "padding-top": elementObject.layout.paddingTop,
+    "padding-bottom": elementObject.layout.paddingBottom,
+    "padding-right": elementObject.layout.paddingRight,
+    "padding-left": elementObject.layout.paddingLeft,
+    "margin-top": elementObject.layout.marginTop,
+    "margin-bottom": elementObject.layout.marginBottom,
+    "margin-right": elementObject.layout.marginRight,
+    "margin-left": elementObject.layout.marginLeft,
+    "background-color": elementObject.style.backgroundColor,
+    "border-style": elementObject.style.borderStyle,
+    "border-color": elementObject.style.borderColor,
+  });
+  widget = setRowColumnLayout(parentObject, parentElement, widget);
+  return widget;
+}
+
+function setRowColumnLayout(parentObject, parentElement, widget) {
+  console.log();
+  if (parentObject && parentObject.layout) {
+    if (parentObject.layout.flexDirection == "column") {
+      switch (parentObject.layout.columnPosition) {
+        case "left":
+          Object.assign(widget.style, {
+            "margin-right": "auto",
+          });
+          break;
+        case "right":
+          Object.assign(widget.style, {
+            "margin-left": "auto",
+          });
+          break;
+        case "center":
+          Object.assign(widget.style, {
+            "margin-left": "auto",
+            "margin-right": "auto",
+          });
+          break;
+      }
+    } else if (parentObject.layout.flexDirection == "row") {
+      Object.assign(parentElement.style, {
+        "align-items": parentObject.layout.alignItems,
+        "flex-wrap": parentObject.layout.flexWrap,
+      });
+    }
+  }
+  return widget;
+}
+
+function checkIfBindings(elementObject, widget, forEachBinding) {
+  let styleBindedAttributes = {};
+  let otherAttributes = {};
+  for (key in elementObject.style) {
+    checkBinding(styleBindedAttributes, key, elementObject.style[key]);
+  }
+  for (key in elementObject.layout) {
+    checkBinding(styleBindedAttributes, key, elementObject.layout[key]);
+  }
+  for (key in elementObject.font) {
+    checkBinding(styleBindedAttributes, key, elementObject.font[key]);
+  }
+  checkBinding(otherAttributes, "text", elementObject.text);
+  checkBinding(otherAttributes, "visible", elementObject.visible);
+  if (forEachBinding)
+    checkBinding(otherAttributes, "foreach", elementObject.data);
+  // slingr widgets handlers are processed in createSlingrWidgetBindingString()
+  if (elementObject.handlers && elementObject.type !== "slingrWidget") {
+    Object.keys(elementObject.handlers).forEach((event) => {
+      if (isBinding(elementObject.handlers[event]))
+        otherAttributes[event] = elementObject.handlers[event];
+    });
+  }
+  let slingrWidgetbinding;
+  if (elementObject.type == "slingrWidget") {
+    let properties = elementObject.properties;
+    slingrWidgetbinding = createSlingrWidgetBindingString(
+      properties,
+      elementObject
+    );
+  } else if (elementObject.type == "tabs") {
+    let properties = buildTabsProperties(elementObject);
+    slingrWidgetbinding = createSlingrWidgetBindingString(
+      properties,
+      elementObject
+    );
+  } else {
+    for (key in elementObject.properties) {
+      if (isBinding(elementObject.properties[key])) {
+        otherAttributes[key] = elementObject.properties[key];
+      }
+    }
+  }
+  if (
+    Object.keys(styleBindedAttributes).length !== 0 ||
+    slingrWidgetbinding ||
+    Object.keys(otherAttributes).length !== 0
+  ) {
+    createBindings(
+      styleBindedAttributes,
+      otherAttributes,
+      slingrWidgetbinding,
+      widget
+    );
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function buildTabsProperties(elementObject) {
+  let items = [];
+  elementObject.properties.tabs.forEach((tab) => {
+    items.push({
+      id: tab.id,
+      icon: "",
+      text: tab.text,
+      content: "",
+      callback: tab.handlers.activate,
+    });
+  });
+  return {
+    color: null,
+    alignment: elementObject.properties.alignment,
+    active: elementObject.properties.active,
+    items: items,
+    tabSelectedCallback: function (data) {
+      let func = buildTabFunction(data);
+      return func();
+    },
+  };
+}
+function buildTabFunction(data) {
+  let parameters = ["$data", "model"];
+  return function () {
+    let newFunction = new Function(parameters, data.callback);
+    delete data.callback;
+    let $root = rootModel;
+    let model = deepProxy(rootModel);
+    return newFunction(data, model);
+  };
+}
+
+function checkBinding(attributesObject, key, input) {
+  let binding = isBinding(input);
+  if (binding) {
+    attributesObject[key] =
+      binding == "observable" ? input : createComputedObservable(input);
+  }
+  return attributesObject[key];
+}
+
+function isBinding(input) {
+  if (
+    input &&
+    input !== undefined &&
+    typeof input == "string" &&
+    input.match(/{{(.*?)}}/g)
+  ) {
+    let inputBindings = input.match(/{{(.*?)}}/g);
+    if (inputBindings.length == 1 && !input.replace(inputBindings[0], "")) {
+      return "observable";
+    } else {
+      return "computedObservable";
+    }
+  } else {
+    return "";
+  }
+}
+
+function createBindings(
+  styleBindedAttributes,
+  otherAttributes,
+  slingrWidgetbinding,
+  widget
+) {
+  let array = [];
+  if (Object.keys(styleBindedAttributes).length !== 0)
+    array.push(createStyleBindingString(styleBindedAttributes));
+  if (Object.keys(otherAttributes).length !== 0)
+    array.push(createOtherBindingString(otherAttributes));
+  if (slingrWidgetbinding) array.push(slingrWidgetbinding);
+  widget.setAttribute("data-bind", array.join(", "));
+}
+
+function createStyleBindingString(attributes) {
+  stringifiedAttributes = "";
+  let array = [];
+  for (key in attributes) {
+    if (attributes[key] && typeof attributes[key] === "string") {
+      observable = buildKnockoutHTMLBinding(attributes[key]);
+      let htmlProp = getHTMLProp(key);
+      array.push("'" + htmlProp + "'" + ": " + observable);
+    }
+  }
+  return "style: {" + array.join(", ") + "}";
+}
+
+function createSlingrWidgetBindingString(properties, elementObject) {
+  let bindingString =
+    elementObject.type == "slingrWidget" ? "widget: {" : "tabs:{";
+  let array = [];
+  for (key in properties) {
+    let widgetParameter = processWidgetProperties(properties, key);
+    array.push(key + ":" + widgetParameter);
+  }
+  if (elementObject.handlers) {
+    let widgetParameter = processWidgetProperties(
+      elementObject.handlers,
+      "click"
+    );
+    array.push("click:" + widgetParameter);
+  }
+  bindingString += array.join(", ") + "}";
+  return bindingString;
+}
+
+function processWidgetProperties(properties, key) {
+  let widgetParameter;
+  let propertyBinding = isBinding(properties[key]);
+  if (propertyBinding) {
+    let binding =
+      propertyBinding == "observable"
+        ? properties[key]
+        : createComputedObservable(properties[key], elementObject.id);
+    widgetParameter = buildKnockoutHTMLBinding(binding);
+    if (key == "click") widgetParameter = "$root." + widgetParameter;
+  } else if (key == "click") {
+    let handler = properties[key];
+    console.log("setting function ", modelDefinition[definition].id);
+    widgetParameter = buildFunctionWithHelpers(handler);
+  } else {
+    widgetParameter =
+      typeof properties[key] == "string"
+        ? "'" + properties[key] + "'"
+        : properties[key];
+  }
+  if (typeof widgetParameter == "object") {
+    widgetParameter = JSON.stringify(widgetParameter);
+  }
+  return widgetParameter;
+}
+
+function createOtherBindingString(attributes) {
+  stringifiedAttributes = "";
+  let array = [];
+  for (key in attributes) {
+    if (attributes[key] && typeof attributes[key] === "string") {
+      let observable = buildKnockoutHTMLBinding(attributes[key]);
+      if (key == "keypress") {
+        array.push("event:{" + key + ": " + observable + "}");
+      } else if (key == "click") {
+        array.push(key + ": $root." + observable);
+      } else {
+        array.push(key + ": " + observable);
+      }
+    }
+  }
+  if (array.length == 0) {
+    return "";
+  } else {
+    return array.join(", ");
+  }
+}
+
+function createComputedObservable(binding) {
+  let bindings = binding.match(/{{(.*?)}}/g);
+  let value = binding;
+  bindings.forEach((element) => {
+    let param = buildKnockoutHTMLBinding(element);
+    let observableValue = param +"()";
+    // let observableValue = param;
+    value = value.replace(element, observableValue);
+  });
+  console.log("COMPUTED BINDING_ ", value);
+  // return "{{" + value + "}}";
+  return  value ;
+}
+
+function buildKnockoutHTMLBinding(binding) {
+  if (typeof binding == "string") {
+    let bindingMatch = binding.match(/{{(.*?)}}/) ;
+    if ( bindingMatch && bindingMatch.length > 0) {
+      bindingMatch = typeof bindingMatch == "object" ? bindingMatch[1] : bindingMatch;
+      bindingMatch = bindingMatch.replace(".", "().");
+      bindingMatch = bindingMatch.replace("model().", "$root.");
+      bindingMatch = bindingMatch.replace("parent().", "$parent.");
+      // binding = binding.replace("model.", "$root.");
+      // binding = binding.replace("parent.", "$parent.");
+      binding = bindingMatch;
+    }
+  }
+  return binding;
+}
+
+function getHTMLProp(input) {
+  switch (input) {
+    case "minWidth":
+      return "min-width";
+    case "maxWidth":
+      return "max-width";
+    case "minWidth":
+      return "min-width";
+    case "minHeight":
+      return "min-height";
+    case "maxHeight":
+      return "max-height";
+    case "flexDirection":
+      return "flex-direction";
+    case "flexShrink":
+      return "flex-shrink";
+    case "paddingTop":
+      return "padding-top";
+    case "paddingBottom":
+      return "padding-top";
+    case "paddingTop":
+      return "padding-bottom";
+    case "paddingRight":
+      return "padding-right";
+    case "paddingLeft":
+      return "padding-left";
+    case "marginTop":
+      return "margin-top";
+    case "marginBottom":
+      return "margin-bottom";
+    case "marginRight":
+      return "margin-right";
+    case "marginLeft":
+      return "margin-left";
+    case "backgroundColor":
+      return "background-color";
+    case "borderStyle":
+      return "border-style";
+    case "borderColor":
+      return "border-color";
+    case "verticalAlign":
+      return "vertical-align";
+    default:
+      return input;
+  }
+}

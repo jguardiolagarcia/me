@@ -1,0 +1,1027 @@
+//  read only record view
+
+// const replace = require("gulp-replace");
+
+define(function (require) {
+  let defaultJson = {
+    id: "container0",
+    type: "container",
+    visible: true,
+    layout: {
+      display: "block",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      flexShrink: 1,
+      gap: "10px",
+      columnPosition: "center",
+      alignItems: "center",
+      paddingTop: "20px",
+      paddingBottom: "20px",
+      paddingLeft: "20px",
+      paddingRight: "20px",
+    },
+    style: {
+      minWidth: "300px",
+      width: "100%",
+      minHeight: "505px",
+      backgroundColor: "#F5F5DC",
+      borderStyle: "dotted",
+      borderColor: "black",
+    },
+    widgets: [
+      {
+        id: "container1",
+        type: "container",
+        visible: true,
+        layout: {
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          flexShrink: 1,
+          gap: "10px",
+          columnPosition: "center",
+          alignItems: "center",
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginBottom: "20px",
+        },
+        style: {
+          width: "100%",
+          backgroundColor: "#F5F5DC",
+          borderStyle: "dotted",
+        },
+        widgets: [
+          {
+            id: "text1",
+            type: "h2",
+            // text: "{{title()}}+' and '+{{title2()}}",
+            text: "{{title}}+' and '+{{title2}}",
+            visible: true,
+            layout: {},
+            style: {
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {},
+          },
+        ],
+      },
+      {
+        id: "people",
+        type: "table",
+        data: "{{people}}",
+        visible: true,
+        layout: {
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginTop: "10",
+          marginBottom: "20px",
+          marginLeft: "auto",
+          marginRight: "auto",
+        },
+        style: {
+          minWidth: "",
+          maxWidth: "",
+          width: "80%",
+          height: "",
+        },
+        properties: {
+          tableTypes: ["table-vmiddle", "table-hover","bootgrid-table","table-striped","table-striped-column"],
+          // table table-vmiddle bootgrid-table table-hover table-striped table-striped-column
+          columns: [
+            {
+              id: "text1",
+              type: "th",
+              header: {
+                id: "text2",
+                type: "th",
+                layout: {
+                  verticalAlign: "middle",
+                },
+                style: {},
+                widgets: [
+                  {
+                    id: "text1",
+                    type: "span",
+                    text: "First Name",
+                    visible: true,
+                    layout: {},
+                    style: {},
+                    font: {},
+                  },
+                ],
+              },
+              cell: {
+                id: "blabla",
+                type: "td",
+                layout: {
+                  verticalAlign: "middle",
+                },
+                style: {},
+                widgets: [
+                  {
+                    id: "text1",
+                    type: "span",
+                    text: "{{firstName}}",
+                    visible: true,
+                    layout: {},
+                    style: {},
+                    font: {
+                      fontWeight: "bold"
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              id: "text2",
+              header: {
+                id: "text2",
+                type: "th",
+                layout: {},
+                style: {},
+                widgets: [
+                  {
+                    id: "text1",
+                    type: "span",
+                    text: "Last Name",
+                    visible: true,
+                    layout: {},
+                    style: {},
+                    font: {},
+                  },
+                ],
+              },
+            cell: {
+                id: "text1",
+                type: "td",
+                layout: {
+                  verticalAlign: "middle",
+                },
+                style: {},
+                widgets: [
+                  {
+                    id: "text1",
+                    text: "{{lastName}}",
+                    type: "span",
+                    visible: true,
+                    layout: {},
+                    style: {},
+                    font: {},
+                  },
+                ],
+              },
+            },
+            {
+              id: "earnings",
+              header: {
+                id: "text2",
+                type: "th",
+                layout: {},
+                style: {},
+                widgets: [
+                  {
+                    id: "text1",
+                    type: "span",
+                    text: "Earnings",
+                    visible: true,
+                    layout: {},
+                    style: {},
+                    font: {},
+                  },
+                ],
+              },
+              cell: {
+                id: "earningTD",
+                type: "td",
+                layout: {
+                  verticalAlign: "middle",
+                },
+                style: {},
+                widgets: [
+                  {
+                    id: "text1",
+                    text: "{{earnings}}",
+                    type: "span",
+                    visible: true,
+                    layout: {},
+                    style: {},
+                    font: {
+                      color: "green",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              id: "Losses",
+              header: {
+                id: "text2",
+                type: "th",
+                layout: {},
+                style: {},
+                widgets: [
+                  {
+                    id: "text1",
+                    type: "span",
+                    text: "Losses",
+                    visible: true,
+                    layout: {},
+                    style: {},
+                    font: {},
+                  },
+                ],
+              },
+              cell: {
+                id: "lossesTD",
+                type: "td",
+                layout: {
+                  verticalAlign: "middle",
+                },
+                style: {},
+                widgets: [
+                  {
+                    id: "text1",
+                    text: "{{losses}}",
+                    type: "span",
+                    visible: true,
+                    layout: {},
+                    style: {},
+                    font: {
+                      color: "red",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              id: "Total",
+              header: {
+                id: "text2",
+                type: "th",
+                layout: {},
+                style: {},
+                widgets: [
+                  {
+                    id: "text1",
+                    type: "span",
+                    text: "Total",
+                    visible: true,
+                    layout: {},
+                    style: {},
+                    font: {},
+                  },
+                ],
+              },
+              cell: {
+                id: "totalTD",
+                type: "td",
+                layout: {
+                  verticalAlign: "middle",
+                },
+                style: {},
+                widgets: [
+                  {
+                    id: "text1",
+                    // text: "{{earnings()}} - {{losses()}}",
+                    text: "{{earnings}} - {{losses}}",
+                    type: "span",
+                    visible: true,
+                    layout: {},
+                    style: {},
+                    font: {
+                      // color: "{{earnings()}} - {{losses()}} < 0 ? 'red' : 'green'",
+                      color: "{{earnings}} - {{losses}} < 0 ? 'red' : 'green'",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              id: "X",
+              header: {
+                id: "X",
+                type: "th",
+                layout: {
+                  flexShrink: 0,
+                },
+                style: {
+                  minWidth: "90px",
+                  width: "90px",
+                },
+                widgets: [],
+              },
+              cell: {
+                id: "lossesTD",
+                type: "td",
+                layout: {
+                  display: "flex",
+                  gap: "5px",
+                  flexShrink: 0,
+                },
+                style: {
+                  minWidth: "170px",
+                },
+                widgets: [
+                  {
+                    id: "slingrButton1",
+                    type: "slingrWidget",
+                    visible: true,
+                    properties: {
+                      kind: "button",
+                      color: "danger",
+                      id: "slingrButton",
+                      text: "",
+                      icon: "zmdi-close",
+                      disabled: false,
+                    },
+                    handlers: {
+                      click: "{{removeItem}}",
+                    },
+                    layout: {},
+                    style: {},
+                  },
+                  {
+                    id: "slingrButton1",
+                    type: "slingrWidget",
+                    visible: true,
+                    properties: {
+                      kind: "button",
+                      color: "warning",
+                      id: "slingrButton",
+                      text: "",
+                      icon: "zmdi-rotate-left",
+                      disabled: false,
+                    },
+                    handlers: {
+                      click: "{{changeName}}",
+                    },
+                    layout: {},
+                    style: {},
+                  },
+                  {
+                    id: "slingrButton1",
+                    type: "slingrWidget",
+                    visible: true,
+                    properties: {
+                      kind: "button",
+                      color: "success",
+                      id: "slingrButton",
+                      text: "",
+                      icon: "zmdi-live-tv",
+                      disabled: false,
+                    },
+                    handlers: {
+                      click: "{{displayFirstName}}",
+                    },
+                    layout: {},
+                    style: {},
+                  },
+                  {
+                    id: "slingrButton1",
+                    type: "slingrWidget",
+                    visible: true,
+                    properties: {
+                      kind: "button",
+                      color: "info",
+                      id: "slingrButton",
+                      text: "",
+                      icon: "zmdi-plus-1",
+                      disabled: false,
+                    },
+                    handlers: {
+                      click: "{{increaseEarnings}}",
+                    },
+                    layout: {},
+                    style: {},
+                  },
+                ],
+              },
+            },
+          ],
+        },
+ 
+      },
+      {
+        id: "inputTextSlingr",
+        type: "slingrWidget",
+        visible: true,
+        properties: {
+          kind: "inputText",
+          id: "titleInput",
+          placeholder: "First Name",
+          value: "{{inputValue}}",
+          password: null,
+          icon: null,
+          maxLength: 10,
+        },
+        layout: {},
+        style: {
+          width: "50%",
+        },
+      },
+      {
+        id: "slingrButton1",
+        type: "slingrWidget",
+        visible: true,
+        properties: {
+          kind: "button",
+          color: "info",
+          id: "slingrButton",
+          text: "Add Entry",
+          icon: "zmdi-home",
+          disabled: false,
+        },
+        handlers: {
+          click: "{{addEntry}}",
+        },
+        layout: {
+          marginTop: "10px",
+        },
+        style: {
+          width: "50%",
+        },
+      },
+      {
+        id: "slingrButton1",
+        type: "slingrWidget",
+        visible: true,
+        properties: {
+          kind: "button",
+          color: "info",
+          id: "slingrButton",
+          text: "Display Input",
+          icon: "zmdi-home",
+          disabled: false,
+        },
+        handlers: {
+          click: "{{displayInput}}",
+        },
+        layout: {
+          marginTop: "10px",
+        },
+        style: {
+          width: "50%",
+        },
+      },
+      {
+        id: "container1",
+        type: "container",
+        visible: true,
+        // with: "{{people}}",
+        layout: {
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          flexShrink: 1,
+          gap: "10px",
+          columnPosition: "center",
+          alignItems: "center",
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginBottom: "20px",
+        },
+        style: {
+          width: "100%",
+          backgroundColor: "#F5F5DC",
+          borderStyle: "dotted",
+        },
+        widgets: [
+          {
+            id: "text1",
+            type: "span",
+            text: "N° of people: ",
+            visible: true,
+            layout: {},
+            style: {},
+            font: {},
+          },
+          {
+            id: "text1",
+            type: "span",
+            text: "{{people.length}}",
+            visible: true,
+            layout: {
+              paddingLeft: "3px",
+              paddingRight: "3px",
+              paddingTop: "3px",
+              paddingBottom: "3px",
+            },
+            style: {
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {},
+          },
+        ],
+      },
+      {
+        id: "people",
+        type: "container",
+        visible: true,
+        if: "{{activePerson}}",
+        // with: "{{activePerson}}",
+        layout: {
+          display: "block",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          flexShrink: 1,
+          gap: "10px",
+          columnPosition: "center",
+          alignItems: "center",
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginTop: "10",
+          marginBottom: "20px",
+          marginLeft: "auto",
+          marginRight: "auto",
+        },
+        style: {
+          minWidth: "",
+          maxWidth: "",
+          width: "80%",
+          height: "",
+          backgroundColor: "#F5F5DC",
+          borderStyle: "dotted",
+        },
+        widgets: [
+          {
+            id: "container1",
+            type: "container",
+            layout: {
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              flexShrink: 1,
+              gap: "10px",
+              columnPosition: "center",
+              alignItems: "center",
+              paddingTop: "10px",
+              paddingBottom: "10px",
+              paddingLeft: "10px",
+              paddingRight: "10px",
+              marginBottom: "20px",
+            },
+            style: {
+              width: "100%",
+              backgroundColor: "#F5F5DC",
+              borderStyle: "dotted",
+            },
+            widgets: [
+              {
+                id: "text1",
+                type: "span",
+                // text: "{{firstName}}",
+                text: "{{activePerson.firstName}}",
+                visible: true,
+                layout: {
+                  paddingLeft: "2px",
+                  paddingRight: "2px",
+                },
+                style: {
+                  width: "70px",
+                  height: "",
+                  backgroundColor: "#F5F5DC",
+                  borderStyle: "solid",
+                  borderColor: "black",
+                },
+                font: {},
+              },
+              {
+                id: "text2",
+                type: "span",
+                // text: "{{lastName}}",
+                text: "{{activePerson.lastName}}",
+                visible: true,
+                layout: {
+                  paddingLeft: "2px",
+                  paddingRight: "2px",
+                },
+                style: {
+                  width: "70px",
+                  height: "",
+                  backgroundColor: "#F5F5DC",
+                  borderStyle: "solid",
+                  borderColor: "black",
+                },
+                font: {},
+              },
+            ],
+          },
+          {
+            id: "pets",
+            type: "repeatedContainer",
+            data: "{{activePerson.pets}}",
+            // if: "{{activePerson()}}.pets.length > 0",
+            visible: true,
+            layout: {
+              display: "block",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              flexShrink: 1,
+              gap: "10px",
+              columnPosition: "center",
+              alignItems: "center",
+              paddingTop: "10px",
+              paddingBottom: "10px",
+              paddingLeft: "10px",
+              paddingRight: "10px",
+              marginTop: "10",
+              marginBottom: "20px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            },
+            style: {
+              minWidth: "",
+              maxWidth: "",
+              width: "80%",
+              height: "",
+              backgroundColor: "#F5F5DC",
+              borderStyle: "dotted",
+            },
+            properties: {
+              repeatedContainer: {
+                id: "group",
+                type: "span",
+                visible: true,
+                layout: {
+                  display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  flexShrink: 1,
+                  gap: "0",
+                  columnPosition: "center",
+                  alignItems: "center",
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
+                  paddingLeft: "10px",
+                  paddingRight: "10px",
+                  marginTop: "5px",
+                  marginBottom: "5px",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                },
+                style: {
+                  minWidth: "",
+                  maxWidth: "",
+                  width: "80%",
+                  height: "",
+                  backgroundColor: "  #ADD8E6",
+                  borderStyle: "dotted",
+                },
+            }
+           
+            },
+            widgets: [
+              {
+                id: "text1",
+                type: "span",
+                text: "{{dogName}}",
+                visible: true,
+                layout: {
+                  paddingLeft: "2px",
+                  paddingRight: "2px",
+                },
+                style: {
+                  width: "70px",
+                  height: "",
+                  backgroundColor: "#F5F5DC",
+                  borderStyle: "solid",
+                  borderColor: "black",
+                },
+                font: {},
+              },
+              {
+                id: "slingrButton1",
+                type: "slingrWidget",
+                visible: true,
+                properties: {
+                  kind: "button",
+                  color: "info",
+                  id: "slingrButton",
+                  text: "Dog",
+                  icon: "zmdi-home",
+                  disabled: false,
+                },
+                handlers: {
+                  click: "{{displayDogName}}",
+                },
+                layout: {
+                  marginLeft: "10px",
+                },
+                style: {
+                  // width: "50%",
+                },
+              },
+              {
+                id: "slingrButton1",
+                type: "slingrWidget",
+                visible: true,
+                properties: {
+                  kind: "button",
+                  color: "info",
+                  id: "slingrButton",
+                  text: "Owner",
+                  icon: "zmdi-home",
+                  disabled: false,
+                },
+                handlers: {
+                  click: "{{displayOwnerName}}",
+                },
+                layout: {
+                  marginLeft: "10px",
+                },
+                style: {
+                },
+              },
+            ],
+          },
+          {
+            id: "earnings",
+            type: "span",
+            text: "{{activePerson.earnings}}",
+            visible: true,
+            layout: {
+              display: "inline-block",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            },
+            style: {
+              width: "35px",
+              height: "",
+              backgroundColor: "#F5F5DC",
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {
+              color: "green",
+            },
+          },
+          {
+            id: "losses",
+            type: "span",
+            text: "{{activePerson.losses}}",
+            visible: true,
+            layout: {
+              display: "inline-block",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            },
+            style: {
+              width: "35px",
+              height: "",
+              backgroundColor: "#F5F5DC",
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {
+              color: "red",
+            },
+          },
+          {
+            id: "total",
+            type: "span",
+            // text: "{{activePerson()}}.earnings - {{activePerson()}}.losses",
+            text: "{{activePerson.earnings}} - {{activePerson.losses}}",
+            visible: true,
+            layout: {
+              display: "inline-block",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            },
+            style: {
+              width: "35px",
+              height: "",
+              backgroundColor:
+                  // "{{activePerson()}}.earnings - {{activePerson()}}.losses < 0 ? 'red' : 'green'",
+                "{{activePerson.earnings}} - {{activePerson.losses}} < 0 ? 'red' : 'green'",
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {
+              color: "white",
+            },
+          },
+          {
+            id: "total",
+            type: "div",
+            text: "WOW! too much earnings",
+            visible: true,
+            // if: "{{activePerson()}}.earnings - {{activePerson()}}.losses > 4",
+            if: "{{activePerson.earnings}} - {{activePerson.losses}} > 4",
+            layout: {
+              display: "inline-block",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            },
+            style: {
+              width: "",
+              height: "",
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {
+              fontWeight: "bold",
+            },
+          },
+        ],
+      },
+    ],
+  };
+
+  var modelDefinition = [
+    {
+      id: "people",
+      type: "array",
+      elementsType: "model",
+      nestedFields: [
+        {
+          id: "firstName",
+          type: "string",
+        },
+        {
+          id: "lastName",
+          type: "string",
+        },
+        {
+          id: "earnings",
+          type: "number",
+        },
+        {
+          id: "losses",
+          type: "number",
+        },
+        {
+          id: "pets",
+          type: "array",
+          elementsType: "model",
+          nestedFields: [
+            {
+              id: "dogName",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "activePerson",
+      type: "model",
+      nestedFields: [
+        {
+          id: "firstName",
+          type: "string",
+        },
+        {
+          id: "lastName",
+          type: "string",
+        },
+        {
+          id: "earnings",
+          type: "number",
+        },
+        {
+          id: "losses",
+          type: "number",
+        },
+        {
+          id: "pets",
+          type: "array",
+          elementsType: "model",
+          nestedFields: [
+            {
+              id: "dogName",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "companyNames",
+      type: "array",
+      elementsType: "string",
+    },
+    {
+      id: "title",
+      type: "string",
+    },
+    {
+      id: "title2",
+      type: "string",
+    },
+    {
+      id: "model",
+      nestedField: [
+        {
+          name: "firstName",
+          type: "string",
+        },
+        {
+          name: "lastName",
+          type: "number",
+        },
+      ],
+    },
+    {
+      id: "inputValue",
+      type: "string",
+      value: "",
+    },
+    {
+      id: "displayInput",
+      type: "function",
+      // [[array]] will bring the array wrapper
+      handler:
+        "alert('a ver... '+model.inputValue);",
+    },
+    {
+      id: "addEntry",
+      type: "function",
+      // [[array]] will bring the array wrapper
+      handler:
+        "model.people.push({firstName: model.inputValue  ,lastName:'TEST',earnings: 2, losses: 3, pets: [{dogName: 'pocha'}, {dogName: 'tara'}]});",
+    },
+    {
+      id: "removeItem",
+      type: "function",
+      handler: "model.people.splice($index, 1);",
+    },
+    {
+      id: "changeName",
+      type: "function",
+      // $item brings the current element data of the iterated array,
+      handler: "$item.firstName = model.inputValue;",
+    },
+    {
+      id: "displayFirstName",
+      type: "function",
+      handler: "console.log('$item',$item);alert('firstName: '+ $item.firstName); model.activePerson = $item; console.log('$model',model)",
+    },
+    {
+      id: "displayDogName",
+      type: "function",
+      handler: "alert($item.dogName);",
+    },
+    {
+      id: "displayOwnerName",
+      type: "function",
+      handler:
+        "alert('owner name: '+model.activePerson.firstName  +' '+ model.activePerson.lastName+'... title: '+ model.title);",
+    },
+    {
+      id: "increaseEarnings",
+      type: "function",
+      handler: "$item.earnings += 1",
+    },
+    {
+      id: "addDog",
+      type: "function",
+      handler: "$item.pets.push({dogName: 'newDog'});",
+    },
+  ];
+
+  modelObject = {
+    title: "hello",
+    title2: "hello2",
+    activePerson: null,
+    people: [
+      {
+        firstName: "Juan",
+        lastName: "Guardiola",
+        earnings: 2,
+        losses: 3,
+        pets: [{ dogName: "pocha" }, { dogName: "tara" }],
+      },
+      {
+        firstName: "Pedasdasdasdro",
+        lastName: "Paramo",
+        earnings: 5,
+        losses: 4,
+        pets: [],
+      },
+      {
+        firstName: "Julio",
+        lastName: "Verne",
+        earnings: 4,
+        losses: 1,
+        pets: [{ dogName: "cuchu" }],
+      },
+    ],
+    inputValue: "HOLA",
+  };

@@ -1,0 +1,356 @@
+// const replace = require("gulp-replace");
+
+define(function (require) {
+  let defaultJson = {
+    id: "container0",
+    type: "container",
+    visible: true,
+    layout: {
+      display: "block",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      flexShrink: 1,
+      gap: "10px",
+      columnPosition: "center",
+      alignItems: "center",
+      paddingTop: "20px",
+      paddingBottom: "20px",
+      paddingLeft: "20px",
+      paddingRight: "20px",
+    },
+    style: {
+      width: "100%",
+      minHeight: "505px",
+      backgroundColor: "#F5F5DC",
+      borderStyle: "dotted",
+      borderColor: "black",
+    },
+    widgets: [
+      {
+        id: "container1",
+        type: "container",
+        visible: true,
+        layout: {
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          flexShrink: 1,
+          gap: "10px",
+          columnPosition: "center",
+          alignItems: "center",
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginBottom: "20px",
+        },
+        style: {
+          width: "100%",
+          backgroundColor: "#F5F5DC",
+          borderStyle: "dotted",
+        },
+        widgets: [
+          {
+            id: "titulo",
+            type: "h1",
+            text: "{{title}}",
+            visible: true,
+            layout: {
+              display: "inline-block",
+              paddingLeft: "2px",
+              paddingRight: "2px",
+            },
+            style: {
+              height: "",
+              backgroundColor: "#F5F5DC",
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {},
+          },
+          {
+            id: "tabs",
+            type: "tabs",
+            properties: {
+              color: null,
+              alignment: "center",
+              active: "gaviola",
+              alignment: "center",
+              tabs: [
+                {
+                  id: "guardiola",
+                  text: "Guardiola",
+                  handlers: {
+                    activate: "alert('guardiola selected'); console.log('$data',$data); console.log('model',model);"
+                  },
+                  widgets: [
+                    {
+                      id: "text1",
+                      type: "h2",
+                      text: "{{model.title2}}",
+                      visible: true,
+                      layout: { marginLeft: "20px", marginRight: "20px" },
+                      style: {
+                        borderStyle: "solid",
+                        borderColor: "black",
+                      },
+                      font: {},
+                    },
+                    {
+                      id: "people",
+                      type: "repeatedContainer",
+                      data: "{{model.people}}",
+                      visible: true,
+                      layout: {
+                        display: "flex",
+                        flexDirection: "row",
+                        flexWrap: "wrap",
+                        justifyContent: "center",
+                        flexShrink: 1,
+                        gap: "10px",
+                        columnPosition: "center",
+                        alignItems: "center",
+                        paddingTop: "10px",
+                        paddingBottom: "10px",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                        marginTop: "10",
+                        marginBottom: "20px",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                      },
+                      style: {
+                        minWidth: "",
+                        maxWidth: "",
+                        width: "80%",
+                        height: "",
+                        backgroundColor: "#F5F5DC",
+                        borderStyle: "dotted",
+                      },
+                      properties: {
+                        repeatedContainer: {
+                          id: "group",
+                          type: "div",
+                          visible: true,
+                          layout: {
+                            display: "block",
+                            flexDirection: "row",
+                            flexWrap: "wrap",
+                            justifyContent: "center",
+                            flexShrink: 1,
+                            gap: "0",
+                            columnPosition: "center",
+                            alignItems: "center",
+                            paddingTop: "10px",
+                            paddingBottom: "10px",
+                            paddingLeft: "10px",
+                            paddingRight: "10px",
+                            marginTop: "5px",
+                            marginBottom: "5px",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                          },
+                          style: {
+                            minWidth: "",
+                            maxWidth: "",
+                            width: "80%",
+                            height: "",
+                            backgroundColor: "  #ADD8E6",
+                            borderStyle: "dotted",
+                          },
+                        },
+                      },
+                      widgets: [
+                        {
+                          id: "personRepeatedElement",
+                          type: "container",
+                          visible: true,
+                          layout: {
+                            display: "flex",
+                            flexDirection: "row",
+                            flexWrap: "wrap",
+                            justifyContent: "center",
+                            flexShrink: 1,
+                            gap: "10px",
+                            columnPosition: "center",
+                            alignItems: "center",
+                            paddingTop: "10px",
+                            paddingBottom: "10px",
+                            paddingLeft: "10px",
+                            paddingRight: "10px",
+                            marginBottom: "20px",
+                          },
+                          style: {
+                            width: "100%",
+                            backgroundColor: "#F5F5DC",
+                            borderStyle: "dotted",
+                          },
+                          widgets: [
+                            {
+                              id: "text1",
+                              type: "div",
+                              text: "{{firstName}}",
+                              visible: true,
+                              layout: {
+                                paddingLeft: "2px",
+                                paddingRight: "2px",
+                              },
+                              style: {
+                                width: "70px",
+                                height: "",
+                                backgroundColor: "#F5F5DC",
+                                borderStyle: "solid",
+                                borderColor: "black",
+                              },
+                              font: {},
+                            },
+                            {
+                              id: "text2",
+                              type: "div",
+                              text: "{{lastName}}",
+                              visible: true,
+                              layout: {
+                                paddingLeft: "2px",
+                                paddingRight: "2px",
+                              },
+                              style: {
+                                width: "70px",
+                                height: "",
+                                backgroundColor: "#F5F5DC",
+                                borderStyle: "solid",
+                                borderColor: "black",
+                              },
+                              font: {},
+                            },
+                            {
+                              id: "slingrButton1",
+                              type: "slingrWidget",
+                              visible: true,
+                              properties: {
+                                kind: "button",
+                                color: "info",
+                                click: "{{kill}}",
+                                id: "slingrButton",
+                                text: "Kill",
+                                icon: "zmdi-home",
+                                disabled: false,
+                              },
+                              layout: {},
+                              style: {},
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+                {
+                  id: "gaviola",
+                  text: "Gaviola",
+                  alignment: "center",
+                  handlers: {
+                    activate: "alert('gaviola selected'); console.log('$data',$data); console.log('model',model);"
+                  },
+                  widgets: [
+                    {
+                      id: "text1",
+                      type: "h2",
+                      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+                      visible: true,
+                      layout: { marginLeft: "20px", marginRight: "20px" },
+                      style: {
+                        borderStyle: "solid",
+                        borderColor: "black",
+                      },
+                      font: {},
+                    },
+                   
+                  ],
+                },
+              ],
+            },
+            layout: {},
+            style: {
+              width: "100%",
+              borderStyle: "solid",
+              borderColor: "black",
+              backgroundColor: "#ffcccb",
+            },
+            font: {},
+          },
+        ],
+      },
+    ],
+  };
+
+  var modelDefinition = [
+    {
+      id: "people",
+      type: "array",
+      elementsType: "model",
+      nestedFields: [
+        {
+          id: "firstName",
+          type: "string",
+        },
+        {
+          id: "lastName",
+          type: "string",
+        },
+      ],
+    },
+    {
+      id: "tabsItems",
+      type: "array",
+      elementsType: "model",
+      nestedFields: [
+        {
+          id: "id",
+          type: "string",
+        },
+        {
+          id: "icon",
+          type: "string",
+        },
+        {
+          id: "text",
+          type: "string",
+        },
+        {
+          id: "content",
+          type: "string",
+        },
+      ],
+    },
+    {
+      id: "title",
+      type: "string",
+    },
+    {
+      id: "title2",
+      type: "string",
+    },
+    {
+      id: "kill",
+      type: "function",
+      handler: "model.people.splice($index, 1);",
+      // handler: "alert('hola');",
+    },
+  ];
+
+  modelObject = {
+    title: "Welcome to the app",
+    title2: "Miembros de la familia:",
+    people: [
+      {
+        firstName: "Juan",
+        lastName: "Guardiola",
+      },
+      {
+        firstName: "Tomas",
+        lastName: "Guardiola",
+      },
+    ],
+  };

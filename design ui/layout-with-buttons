@@ -1,0 +1,702 @@
+// const replace = require("gulp-replace");
+define(function (require) {
+  let defaultJson = {
+    id: "container0",
+    type: "container",
+    visible: true,
+    layout: {
+      display: "block",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      flexShrink: 1,
+      gap: "10px",
+      columnPosition: "center",
+      alignItems: "center",
+      paddingTop: "20px",
+      paddingBottom: "20px",
+      paddingLeft: "20px",
+      paddingRight: "20px",
+      marginTop: "0",
+      marginBottom: "0",
+      marginLeft: "0",
+      marginRight: "0",
+    },
+    style: {
+      minWidth: "300px",
+      maxWidth: "",
+      width: "-",
+      minHeight: "505px",
+      maxHeight: "",
+      height: "",
+      backgroundColor: "#F5F5DC",
+      borderStyle: "dotted",
+      borderColor: "black",
+    },
+    widgets: [
+      {
+        id: "container1",
+        type: "container",
+        visible: true,
+        layout: {
+          display: "{{display}}",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          flexShrink: 1,
+          gap: "10px",
+          columnPosition: "center",
+          alignItems: "center",
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginTop: "0",
+          marginBottom: "20px",
+          marginLeft: "0",
+          marginRight: "0",
+        },
+        style: {
+          minWidth: "",
+          maxWidth: "",
+          width: "100%",
+          height: "",
+          backgroundColor: "#F5F5DC",
+          borderStyle: "dotted",
+        },
+        widgets: [
+          {
+            id: "text1",
+            type: "h2",
+            text: "model: ",
+            visible: true,
+            layout: {},
+            style: {},
+            font: {},
+          },
+          {
+            id: "text1",
+            type: "h2",
+            text: "{{person()}}.firstName",
+            visible: true,
+            layout: {},
+            style: {
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {},
+          },
+          {
+            id: "text1",
+            type: "h2",
+            text: "{{person()}}.lastName",
+            visible: true,
+            layout: {},
+            style: {
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {},
+          },
+        ],
+      },
+      {
+        id: "container1",
+        type: "container",
+        visible: true,
+        layout: {
+          display: "{{display}}",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          flexShrink: 1,
+          gap: "10px",
+          columnPosition: "center",
+          alignItems: "center",
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginTop: "0",
+          marginBottom: "20px",
+          marginLeft: "0",
+          marginRight: "0",
+        },
+        style: {
+          minWidth: "",
+          maxWidth: "",
+          width: "100%",
+          height: "",
+          backgroundColor: "#F5F5DC",
+          borderStyle: "dotted",
+        },
+        widgets: [
+          {
+            id: "text1",
+            type: "h2",
+            text: "This is a computed Var: ",
+            visible: true,
+            layout: {},
+            style: {},
+            font: {},
+          },
+          {
+            id: "text1",
+            type: "h2",
+            text: "{{title()}}+' and '+{{title2()}}",
+            visible: true,
+            layout: {},
+            style: {
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {},
+          },
+        ],
+      },
+      {
+        id: "container2",
+        type: "container",
+        visible: true,
+        layout: {
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          flexShrink: 1,
+          gap: "10px",
+          columnPosition: "center",
+          alignItems: "center",
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginTop: "0",
+          marginBottom: "0",
+          marginLeft: "0",
+          marginRight: "0",
+        },
+        style: {
+          minWidth: "",
+          maxWidth: "",
+          width: "100%",
+          height: "",
+          backgroundColor: "#F5F5DC",
+          borderStyle: "dotted",
+          borderColor: "black",
+        },
+        widgets: [
+          {
+            id: "button1",
+            type: "button",
+            text: "button 1",
+            visible: true,
+            layout: {
+              paddingTop: "20px",
+              paddingBottom: "20px",
+              paddingLeft: "20px",
+              paddingRigth: "20px",
+              marginTop: "0",
+              marginBottom: "0",
+              marginLeft: "0",
+              marginRight: "0",
+            },
+            style: {
+              width: "125px",
+              height: "125px",
+              backgroundColor: "",
+            },
+            properties: {
+              class: "btn-primary",
+              type: "button",
+            },
+            handlers: {
+              click: "{{displayAlert}}"
+            },
+          },
+          {
+            id: "button2",
+            type: "button",
+            text: "button 2",
+            visible: true,
+            layout: {
+              paddingTop: "20px",
+              paddingBottom: "20px",
+              paddingLeft: "20px",
+              paddingRigth: "20px",
+              marginTop: "0",
+              marginBottom: "0",
+              marginLeft: "0",
+              marginRight: "0",
+            },
+            style: {
+              width: "125px",
+              height: "125px",
+              backgroundColor: "",
+            },
+            properties: {
+              class: "btn-success",
+              type: "button",
+            },
+            handlers: {
+              click: "{{displayAlert}}"
+            },
+          },
+          {
+            id: "button3",
+            type: "button",
+            text: "{{button3Text}}",
+            visible: "{{showButton3}}",
+            layout: {
+              paddingTop: "20px",
+              paddingBottom: "20px",
+              paddingLeft: "20px",
+              paddingRigth: "20px",
+              marginTop: "0",
+              marginBottom: "0",
+              marginLeft: "0",
+              marginRight: "0",
+            },
+            style: {
+              width: "125px",
+              height: "125px",
+              backgroundColor: "",
+            },
+            properties: {
+              class: "btn-warning",
+              type: "button",
+            },
+            handlers: {
+              click: "{{displayAlert}}"
+            },
+          },
+          {
+            id: "containerX",
+            type: "container",
+            visible: true,
+            layout: {
+              display: "flex",
+              flexDirection: "column",
+              flexWrap: "wrap",
+              justifyContent: "space-around",
+              flexShrink: 1,
+              gap: "",
+              columnPosition: "center",
+              alignItems: "center",
+              paddingTop: "0",
+              paddingBottom: "",
+              paddingLeft: "",
+              paddingRight: "",
+              marginTop: "0",
+              marginBottom: "0",
+              marginLeft: "0",
+              marginRight: "0",
+            },
+            style: {
+              minWidth: "",
+              maxWidth: "",
+              width: "75px",
+              height: "125px",
+              backgroundColor: "#F5F5DC",
+              borderStyle: "dotted",
+            },
+            widgets: [
+              {
+                id: "button4",
+                type: "button",
+                text: "X",
+                visible: true,
+                layout: {},
+                style: {
+                  width: "",
+                  height: "",
+                  backgroundColor: "",
+                },
+                properties: {
+                  class: "btn-danger",
+                  type: "button",
+                },
+                handlers: {
+                  click: "{{changeButton3Visibility}}"
+                }
+              },
+              {
+                id: "buttonEdit",
+                type: "button",
+                text: "O",
+                visible: true,
+                layout: {},
+                style: {
+                  width: "",
+                  height: "",
+                  backgroundColor: "",
+                },
+                properties: {
+                  class: "btn-success",
+                  type: "button",
+                },
+                handlers: {
+                  click: "{{displayAlert}}"
+                }
+              },
+              {
+                id: "buttonSlash",
+                type: "button",
+                text: "-",
+                visible: true,
+                layout: {},
+                style: {
+                  width: "",
+                  height: "",
+                  backgroundColor: "",
+                },
+                properties: {
+                  class: "btn-info",
+                  type: "button",
+                },
+                handlers: {
+                  click: "{{enableSlingrButton}}"
+                }
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "container3",
+        type: "formGroup",
+        visible: true,
+        layout: {
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginTop: "20px",
+        },
+        style: {
+          minWidth: "",
+          maxWidth: "",
+          width: "100%",
+          height: "",
+          backgroundColor: "#F5F5DC",
+          borderStyle: "dotted",
+        },
+        widgets: [
+          {
+            id: "text1",
+            type: "label",
+            text: "Input Label",
+            visible: true,
+            layout: {
+              marginBottom: "10px",
+            },
+            style: {
+              width: "25%",
+              height: "",
+              backgroundColor: "",
+              borderStyle: "doted",
+              borderColor: "gray",
+            },
+            font: {
+              color: "",
+              fontFamily: "",
+              fontStyle: "",
+              fontSize: "",
+              fontWeight: "",
+            },
+          },
+          {
+            id: "inputTextSlingr",
+            type: "slingrWidget",
+            visible: true,
+            properties: {
+              kind: "inputText",
+              id: "titleInput",
+              placeholder: "Title",
+              value: "{{inputValue}}",
+              password: null,
+              icon: null,
+              maxLength: 10,
+            },
+       
+            layout: {},
+            style: {
+              width: "50%",
+            },
+          },
+          {
+            id: "slingrButton1",
+            type: "slingrWidget",
+            visible: true,
+            layout: {
+              marginTop: "10px",
+            },
+            style: {
+              width: "30%",
+              height: "",
+              backgroundColor: "",
+              borderStyle: "",
+              borderColor: "",
+            },  
+            properties: {
+              kind: "button",
+              color: "info",
+              id: "slingrButton",
+              text: "Submit title 1",
+              icon: "zmdi-home",
+              disabled: false,
+            }, 
+            handlers: {
+              click: "{{submitInput}}"
+            }
+          },
+          {
+            id: "slingrButton1",
+            type: "slingrWidget",
+            visible: true,
+            layout: {
+              marginTop: "10px",
+            },
+            style: {
+              width: "30%",
+              height: "",
+              backgroundColor: "",
+              borderStyle: "",
+              borderColor: "",
+            },
+            properties: {
+              kind: "button",
+              color: "info",
+              id: "slingrButton",
+              text: "Submit title 2",
+              icon: "zmdi-home",
+              disabled: false,
+            },
+            handlers: {
+              click: "{{submitInput2}}"
+            }
+          },
+          {
+            id: "slingrButton1",
+            type: "slingrWidget",
+            visible: true,
+
+            layout: {
+              marginTop: "10px",
+            },
+            style: {
+              width: "30%",
+              height: "",
+              backgroundColor: "",
+              borderStyle: "",
+              borderColor: "",
+            },
+            properties: {
+              kind: "button",
+              color: "warning",
+              click: "{{submitName}}",
+              id: "slingrButton",
+              text: "Submit Name",
+              icon: "",
+              disabled: false,
+            },
+            handlers: {
+              click: "{{submitName}}"
+            }
+          },
+        ],
+      },
+      {
+        id: "container4",
+        type: "container",
+        visible: true,
+        layout: {
+          display: "flex",
+          flexDirection: "",
+          flexWrap: "",
+          justifyContent: "",
+          flexShrink: "",
+          gap: "15px",
+          columnPosition: "",
+          alignItems: "",
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          marginTop: "20px",
+          marginBottom: "",
+          marginLeft: "",
+          marginRight: "",
+        },
+        style: {
+          minWidth: "",
+          maxWidth: "",
+          width: "100%",
+          height: "",
+          backgroundColor: "#F5F5DC",
+          borderStyle: "dotted",
+        },
+        widgets: [
+          {
+            id: "slingrButton2",
+            type: "slingrWidget",
+            visible: true,
+            layout: {},
+            style: {},
+            properties: {
+              kind: "button",
+              color: "info",
+              id: "slingrButton",
+              text: "Slingr Button",
+              icon: "",
+              disabled: "{{disableSlingrButton}}",
+            },
+            handlers: {
+              click: "{{displayBlabla}}"
+            },
+          },
+          
+          {
+            id: "inputText",
+            type: "input",
+            visible: true,
+            layout: {},
+            style: {
+              width: "50%",
+              height: "",
+              backgroundColor: "",
+              borderStyle: "solid",
+              borderColor: "black",
+            },
+            font: {
+              color: "",
+              fontFamily: "",
+              fontStyle: "",
+              fontSize: "",
+              fontWeight: "",
+            },
+            properties: {
+              type: "text",
+              placeholder: "this is a place holder",
+            },
+            handlers: {
+              textInput: "{{title}}"
+            },
+            // on: [
+            //   {
+            //     event: "textInput",
+            //     action: "{{title}}",
+            //   },
+            // ],
+          },
+          {
+            id: "slingrButton2",
+            type: "slingrWidget",
+            visible: true,
+            properties: {
+              kind: "checkbox",
+              value: false,
+              text: "HOLA K ACE",
+            },
+            layout: {},
+            style: {},
+          },
+        ],
+      },
+    ],
+  };
+
+  var modelDefinition = [
+    {
+      id: "title",
+      type: "string",
+    },
+    {
+      id: "title2",
+      type: "string",
+    },
+    {
+      id: "button3Text",
+      type: "string",
+    },
+    {
+      id: "display",
+      type: "string",
+    },
+    {
+      id: "showButton3",
+      type: "boolean",
+    },
+    {
+      id: "changeButton3Visibility",
+      type: "function",
+      handler: "model.showButton3 = model.showButton3 ? false:true;",
+    },
+    {
+      id: "disableSlingrButton",
+      type: "boolean",
+    },
+    {
+      id: "displayBlabla",
+      type: "function",
+      handler: "alert('blabla');",
+    },
+    {
+      id: "displayAlert",
+      type: "function",
+      handler: "alert(model.person.firstName)",
+    },
+    {
+      id: "enableSlingrButton",
+      type: "function",
+      handler:
+        "model.disableSlingrButton = model.disableSlingrButton ? false : true;",
+      },
+    {
+      id: "submitInput",
+      type: "function",
+      handler: "model.title = model.inputValue;",
+    },
+    {
+      id: "submitInput2",
+      type: "function",
+      handler: "model.title2 = model.inputValue",
+    },
+    {
+      id: "submitName",
+      type: "function",
+
+      handler: "model.person.firstName = model.inputValue",
+    },
+    {
+      id: "person",
+      type: "model",
+      nestedFields: [
+        {
+          id: "firstName",
+          type: "string",
+        },
+        {
+          id: "lastName",
+          type: "string",
+        },
+      ],
+    },
+    {
+      id: "inputValue",
+      type: "string",
+      value: "",
+    },
+  ];
+
+  modelObject = {
+    display: "flex",
+    title: "hello",
+    title2: "hello2",
+    person: { firstName: "pepe", lastName: "guardiola" },
+    button3Text: "boton 3",
+    disableSlingrButton: true,
+    showButton3: true,
+    inputValue: "",
+  };
+
