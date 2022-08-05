@@ -1,3 +1,4 @@
+
 //  read only record view
 
 // const replace = require("gulp-replace");
@@ -557,7 +558,190 @@ define(function (require) {
           borderStyle: "dotted",
         },
         widgets: [
-        ]
+  
+        ],
       },
     ],
+  };
+
+  var modelDefinition = [
+    {
+      id: "people",
+      type: "array",
+      elementsType: "model",
+      nestedFields: [
+        {
+          id: "firstName",
+          type: "string",
+        },
+        {
+          id: "lastName",
+          type: "string",
+        },
+        {
+          id: "earnings",
+          type: "number",
+        },
+        {
+          id: "losses",
+          type: "number",
+        },
+        {
+          id: "pets",
+          type: "array",
+          elementsType: "model",
+          nestedFields: [
+            {
+              id: "dogName",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "activePerson",
+      type: "model",
+      nestedFields: [
+        {
+          id: "firstName",
+          type: "string",
+        },
+        {
+          id: "lastName",
+          type: "string",
+        },
+        {
+          id: "earnings",
+          type: "number",
+        },
+        {
+          id: "losses",
+          type: "number",
+        },
+        {
+          id: "pets",
+          type: "array",
+          elementsType: "model",
+          nestedFields: [
+            {
+              id: "dogName",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "companyNames",
+      type: "array",
+      elementsType: "string",
+    },
+    {
+      id: "title",
+      type: "string",
+    },
+    {
+      id: "title2",
+      type: "string",
+    },
+    {
+      id: "model",
+      nestedField: [
+        {
+          name: "firstName",
+          type: "string",
+        },
+        {
+          name: "lastName",
+          type: "number",
+        },
+      ],
+    },
+    {
+      id: "inputValue",
+      type: "string",
+      value: "",
+    },
+    {
+      id: "displayInput",
+      type: "function",
+      // [[array]] will bring the array wrapper
+      handler:
+        "alert('a ver... '+model.inputValue);",
+    },
+    {
+      id: "addEntry",
+      type: "function",
+      // [[array]] will bring the array wrapper
+      handler:
+        "model.people.push({firstName: model.inputValue  ,lastName:'TEST',earnings: 2, losses: 3, pets: [{dogName: 'pocha'}, {dogName: 'tara'}]});",
+    },
+    {
+      id: "removeItem",
+      type: "function",
+      handler: "model.people.splice($index, 1);",
+    },
+    {
+      id: "changeName",
+      type: "function",
+      // $item brings the current element data of the iterated array,
+      handler: "$item.firstName = model.inputValue;",
+    },
+    {
+      id: "displayFirstName",
+      type: "function",
+      handler: "console.log('$item',$item);alert('firstName: '+ $item.firstName); model.activePerson = $item; console.log('$model',model)",
+    },
+    {
+      id: "displayDogName",
+      type: "function",
+      handler: "alert($item.dogName);",
+    },
+    {
+      id: "displayOwnerName",
+      type: "function",
+      handler:
+        "alert('owner name: '+model.activePerson.firstName  +' '+ model.activePerson.lastName+'... title: '+ model.title);",
+    },
+    {
+      id: "increaseEarnings",
+      type: "function",
+      handler: "$item.earnings += 1",
+    },
+    {
+      id: "addDog",
+      type: "function",
+      handler: "$item.pets.push({dogName: 'newDog'});",
+    },
+  ];
+
+  modelObject = {
+    title: "hello",
+    title2: "hello2",
+    activePerson: null,
+    people: [
+      {
+        firstName: "Juan",
+        lastName: "Guardiola",
+        earnings: 2,
+        losses: 3,
+        pets: [{ dogName: "pocha" }, { dogName: "tara" }],
+      },
+      {
+        firstName: "Pedasdasdasdro",
+        lastName: "Paramo",
+        earnings: 5,
+        losses: 4,
+        pets: [],
+      },
+      {
+        firstName: "Julio",
+        lastName: "Verne",
+        earnings: 4,
+        losses: 1,
+        pets: [{ dogName: "cuchu" }],
+      },
+    ],
+    inputValue: "HOLA",
   };

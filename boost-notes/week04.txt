@@ -1,0 +1,5 @@
+# Related
+picoctf.org
+# Notes
+* How to geet the ip of the VM if you don't know it.
+* What is home directory? access only with user permissions (separated from system files)

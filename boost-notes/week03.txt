@@ -10,7 +10,7 @@ sa data of lasts log in thrugh ssh
 * `w` shos people logged in
 * `less`
 * `ssh userName@VMip ´ for logging into an VM
-* `VBoxManage startvm "VM name" --type headless`
+* `VBoxManage startvm "boost" --type headless`
 comments:
 * git bash was created to use git. But it is great because it let us use bash wihtout installing ws2.
 * we can search apt programs with `apt search programName`.
