@@ -1,0 +1,30 @@
+
+https://gmelius.io/oauth/authorize?client_id=6df0a60692cfcdc6e6a4466a573fedc0-w1JRCLIIaGBe63YcYcB8O.gmelius.com&code_challenge=XkZXWx_vlPZEOD_iCTBejVMsERlEhTS7JfrH5P1y6AM&scope=offline_access%3Bhttps%3A%2F%2Fapi.gmelius.com%2Fpublic%2Fauth%2Fconversations%2Fread%3Bhttps%3A%2F%2Fapi.gmelius.com%2Fpublic%2Fauth%2Fconversations%2Fmetadata%3Bhttps%3A%2F%2Fapi.gmelius.com%2Fpublic%2Fauth%2Fconversations%2Finsert%3Bhttps%3A%2F%2Fapi.gmelius.com%2Fpublic%2Fauth%2Fboards%2Fread%3Bhttps%3A%2F%2Fapi.gmelius.com%2Fpublic%2Fauth%2Fboards%2Fmodify&redirect_uri=https%3A%2F%2Fhq.slingrs.io%2Fcallback
+
+
+code= 
+
+https://hq.slingrs.io/callback?code=OhNEsCbFWy15wQCNL8wjyCgH5geKNRo5DjROkIxB9AC
+
+
+var a =app.endpoints.gmelius.webhooks.getAll();
+var webhookExists= false;
+a.data.webhooks.forEach(function (res) {
+                        if (res.model_id == "${GMELIUS_HQ_WORKSPACE_ID}") {
+                          log('webhook already exists');
+                          webhookExists = true;
+                        }
+                        });
+if (!webhookExists) {
+  var a = app.endpoints.gmelius.webhooks.post({
+  type:"shared_folder",
+  model_id: "${GMELIUS_HQ_WORKSPACE_ID}",
+  description: "hq dev",
+  callback_url: "https://hq.slingrs.io/dev/endpoints/gmelius",
+  valid_until: 60
+});
+}
+
+
+log(JSON.stringify(a));
+
