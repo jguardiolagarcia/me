@@ -1,0 +1,11 @@
+#week 04
+## Related
+
+## Notes
+
+* How do you search files? With the command `find`.
+* UNIX philosophy, filters, pipes
+
+
+## Commands
+* `

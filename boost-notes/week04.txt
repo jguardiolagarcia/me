@@ -1,5 +1,29 @@
-# Related
+#week 04
+## Related
 picoctf.org
-# Notes
+## Notes
 * How to geet the ip of the VM if you don't know it.
 * What is home directory? access only with user permissions (separated from system files)
+* the file /etc/passwd has a line for each user account. We can see mor info with `man 5 passwd`
+* the file /etc/skel is copied in a new user dierctory. Like a template.
+* if you delete a user from a system, the files and ID related to that user are preserved
+* `rmdir foo` remove an empty directory
+* `rm -rf foo` remove a directory and all everything in it. (-f is for "foring" so we are not asked confirmation)
+
+
+## Commands
+
+* `ls -ld` look directory permission on current directory
+* `stat foo` see all the details  about the foo inode
+* `chmod +x foo` make file executable by user group other
+* `stat -c '%a'` to see octal permissions
+* `chown [file] [user]` transfer file ownershi`
+* `mv foo other` change file `foo`name to `other` (or move)
+* `cp file1 file2 file3 dir` copy all files into directory `dir`
+* `cp -R dir anotherdir` copy all files from `dir` to `anotherdir` but create new files (new stamps)
+* `cp -ar dir anotherdir` recursively copy all files from `dir` to `anotherdir` but keeps original stamps
+* `scp`copy between machines
+* `touch` creates a new text file
+* `grep foo file` - list only line containing foo
+* `chown -R jill:jill foo` transfer ownership of all files in foo to other users (jill:jill-).
+* `set -o nonclobber`stop from blowinf away files. It will ask for confirmation
