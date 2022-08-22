@@ -77,7 +77,7 @@ define(function (require) {
           {
             id: "text1",
             type: "h2",
-            text: "{{person()}}.firstName",
+            text: "{{person}}.firstName",
             visible: true,
             layout: {},
             style: {
@@ -89,7 +89,7 @@ define(function (require) {
           {
             id: "text1",
             type: "h2",
-            text: "{{person()}}.lastName",
+            text: "{{person}}.lastName",
             visible: true,
             layout: {},
             style: {
@@ -143,7 +143,7 @@ define(function (require) {
           {
             id: "text1",
             type: "h2",
-            text: "{{title()}}+' and '+{{title2()}}",
+            text: "{{title}}+' and '+{{title2}}",
             visible: true,
             layout: {},
             style: {
@@ -665,7 +665,6 @@ define(function (require) {
     {
       id: "submitName",
       type: "function",
-
       handler: "model.person.firstName = model.inputValue",
     },
     {

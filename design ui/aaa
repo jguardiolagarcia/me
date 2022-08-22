@@ -1532,7 +1532,8 @@ function buildRecordWidget(parentObject, parentElement, elementObject) {
     rootModel[recordId].name == "observable"
   ) {
     rootModel[recordId].subscribe(function (newValue) {
- 
+      console.log("arguments: ", arguments);
+      console.log("this: ", this);
       slingr.ws.post(
         {
           url:
@@ -1550,7 +1551,7 @@ function buildRecordWidget(parentObject, parentElement, elementObject) {
               console.log("elementObject", elementObject);
               console.log("recordData", recordData);
               let recordModel = new Record(recordData);
-              addNullFieldsToModel(recordModel,res.fields);
+              console.log("newRecord, ", recordModel);
               console.log("rootModel, ", rootModel);
               rootModel[elementObject.output.record] = recordModel;
 
@@ -1582,18 +1583,6 @@ function buildRecordWidget(parentObject, parentElement, elementObject) {
   console.log("readonly element", arguments);
   checkIfBindings(elementObject, container);
   return container;
-}
-
-function addNullFieldsToModel(recordModel, uiResFields) {
-  let modelKeys = Object.keys(recordModel);
-  uiResFields.map((field) => {
-    console.log('field',field);
-    if (!modelKeys.includes(field.name)) {
-      console.log('modelKeys.includes(field.name)',field.name);
-      recordModel[field.name] = ko.observable();
-    }
-  });
-  console.log('recordModel',recordModel);
 }
 
 function buildLabelValueGrid(field, parents) {
@@ -1638,7 +1627,31 @@ function buildValueColumn(field, parentsParam) {
       let parentName = field.name;
       value.nestedFields.forEach((nestedField) => {
         nestedField.subtype = field.subtype;
-        parents = processParents(parents, parentName, "nestedField");
+        if (parents) {
+          let updated = false;
+          console.log("nestedField before parents:", parents);
+          parents = parents.map((parent) => {
+            console.log("nestedField child parent:", parent);
+            if (
+              parent[0] == "nestedField" &&
+              parent[1] == parentName
+            ) {
+              updated = true;
+              return ["nestedField", parentName];
+            }
+            return parent;
+          });
+          if (!updated) {
+            console.log("nestedField Pushing Parent", parentName);
+            parents.push(["nestedField", parentName]);
+          } else {
+            console.log("nestedFieldPARENTS UPDATED: ", parents);
+          }
+          console.log("nestedFieldPARENTS: ", parents);
+        } else {
+          console.log("nestedField creating Parent", parentName);
+          parents = [["nestedField", parentName]];
+        }
         fieldValueCol.append(buildLabelValueGrid(nestedField, parents));
         fieldValueCol.appendChild(document.createElement("br"));
       });
@@ -1672,6 +1685,7 @@ function buildValueColumn(field, parentsParam) {
         buildValueElement(value, fieldValueCol, field, parents);
       });
     } else {
+      console.log("ONE notNested", field);
       buildValueElement(value, fieldValueCol, field, parents);
     }
   }
@@ -1681,23 +1695,30 @@ function buildValueColumn(field, parentsParam) {
 function processParents(parents, parentName, type, index) {
   let updated = false;
   let parent0=[type, parentName];
-  if (index || index == 0 ) parent0.push(index);
+  if (index) parent0.push(index);
   if (parents) {
-    console.log('parents',parents);
+    console.log(type+" before parents:", parents);
     parents = parents.map((parent) => {
       if (
         parent[0] == type &&
         parent[1] == parentName 
       ) {
-        updated = true;
-        if(index || index == 0 && parent[2] == index - 1 ) {
+        if(index && parent[2] == index - 1 ) {
+          updated = true;
           return [type, parentName, index];
         }
       }
       return parent;
     });
-    if (!updated) parents.push(parent0);
+    if (!updated) {
+      console.log(type+" Pushing Parent", parentName);
+      parents.push(parent0);
+    } else {
+      console.log(type+" PARENTS UPDATED: ", parents);
+    }
+    console.log(type+ " PARENTS: ", parents);
   } else {
+    console.log(type+ "creating Parent", parentName);
     parents = [parent0];
   }
   return parents;
@@ -1744,7 +1765,7 @@ function buildValueElement(value, fieldValueCol, field, parents) {
     } else {
       name = field.name;
     }
-    console.log("field binding edit : ", name);
+    console.log("value edit : ", value);
     let inputElement = {
       id: "inputTextSlingr",
       type: "slingrWidget",
@@ -2211,10 +2232,12 @@ function buildKnockoutHTMLBinding(binding) {
     if (bindingMatch && bindingMatch.length > 0) {
       bindingMatch =
         typeof bindingMatch == "object" ? bindingMatch[1] : bindingMatch;
-      bindingMatch = bindingMatch.replaceAll(".", "().");
+      bindingMatch = bindingMatch.replace(".", "().");
       bindingMatch = bindingMatch.replace("length()", "length");
       bindingMatch = bindingMatch.replace("model().", "$root.");
       bindingMatch = bindingMatch.replace("parent().", "$parent.");
+      // binding = binding.replace("model.", "$root.");
+      // binding = binding.replace("parent.", "$parent.");
       binding = bindingMatch;
     }
   }
