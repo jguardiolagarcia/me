@@ -1,11 +1,27 @@
 #week 04
 ## Related
-
+offsec live boost
 ## Notes
 
-* How do you search files? With the command `find`.
+* How do you search files?
+	With the command `find`. Find searches files recursively down a directory.
+	`find` is included in alpine, but not `whereis` and `locate`. Those two need a database and probably the commands are properly indexed. They also wont restrict the search to a directory
+	`ls`colud be easil yhacked to hide files from intruders but `find`is not that vulnerable.
+* Diff bewtween `/tmp` and `/dev/shm`?
+	`/dev/shm` is stored in RAM.
 * UNIX philosophy, filters, pipes
 
 
+
+
 ## Commands
-* `
+* `find . ` - sorto fo the same as `ls -l1`
+* `find . -ls `
+* find . -type `f` - find files in direcotry
+* `find . -type f -name ".*"` - find files that starts with a dot.
+* `find . -mtime -1` find files modified in the las 24 hours
+* `find . -mmin -5 2>/dev/null >/tmp/foo` - finds files changed in the last 5 mins, didcard standard errors with `2>/dev/null` and redirect to file `/tmp/foo`
+* `head -5 [file] ` - shows first 5 lines
+* `tail -5 [file] ` - shows last 5 lines of file
+
+
